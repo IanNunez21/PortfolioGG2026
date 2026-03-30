@@ -1,33 +1,27 @@
-import PageHeader from '../components/ui/PageHeader';
-import SectionTitle from '../components/ui/SectionTitle';
-import ChallengeCard from '../components/cards/ChallengeCard';
-import { challenges } from '../data/challengesData';
+import { motion } from 'framer-motion';
+import { Hammer } from 'lucide-react';
 
 export default function Desafios() {
   return (
-    <>
-      <PageHeader
-        title="Desafíos"
-        subtitle="Cinco desafíos prácticos desarrollados a lo largo de la cursada de Gestión Gerencial, integrando teoría, metodología y trabajo real en organizaciones."
-        badge="D3 — D7"
-        gradient="from-blue-400 to-cyan-500"
-      />
-
-      <div className="section pt-0">
-        <div className="container-content">
-          <SectionTitle
-            title="Índice de Desafíos"
-            subtitle="Hacé clic en cualquier desafío para ver el desarrollo completo, evidencias y reflexión del equipo."
-            badge={`${challenges.length} desafíos`}
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {challenges.map((challenge, i) => (
-              <ChallengeCard key={challenge.id} challenge={challenge} index={i} />
-            ))}
-          </div>
+    <section className="min-h-[calc(100dvh-5rem)] flex items-center justify-center p-6 relative">
+      <div className="absolute inset-0 dot-bg opacity-20 pointer-events-none" aria-hidden="true" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center z-10 flex flex-col items-center"
+      >
+        <div className="w-20 h-20 rounded-full bg-primary-800/50 flex items-center justify-center mb-6 border border-primary-700/50 shadow-glow">
+          <Hammer className="w-10 h-10 text-accent" />
         </div>
-      </div>
-    </>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-accent to-success bg-clip-text text-transparent">
+          Desafíos
+        </h1>
+        <span className="badge badge-blue mb-4">En construcción</span>
+        <p className="text-primary-300 text-lg sm:text-xl max-w-md mx-auto">
+          Estamos trabajando en el contenido de esta sección. ¡Próximamente estará disponible!
+        </p>
+      </motion.div>
+    </section>
   );
 }
