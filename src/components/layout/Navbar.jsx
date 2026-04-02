@@ -1,8 +1,44 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, BookOpen, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { team } from '../../data/teamData';
+
+// SVG logo de pomelo rosado
+function GrapefruitLogo({ size = 40 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Fondo circular — pulpa externa */}
+      <circle cx="24" cy="24" r="22" fill="#F9C74F" />
+      {/* Capa media — tono rosado */}
+      <circle cx="24" cy="24" r="18" fill="#F4A261" />
+      {/* Pulpa interna — rosa */}
+      <circle cx="24" cy="24" r="14" fill="#F07A95" />
+      {/* Segmentos del pomelo */}
+      <g stroke="#FDF6F0" strokeWidth="1.2" strokeLinecap="round" opacity="0.9">
+        {/* Línea vertical */}
+        <line x1="24" y1="10" x2="24" y2="38" />
+        {/* Línea horizontal */}
+        <line x1="10" y1="24" x2="38" y2="24" />
+        {/* Diagonales */}
+        <line x1="14.1" y1="14.1" x2="33.9" y2="33.9" />
+        <line x1="33.9" y1="14.1" x2="14.1" y2="33.9" />
+      </g>
+      {/* Centro brillante */}
+      <circle cx="24" cy="24" r="3" fill="#E8547A" opacity="0.8" />
+      <circle cx="24" cy="24" r="1.5" fill="#FDF6F0" opacity="0.9" />
+      {/* Brillo superior */}
+      <ellipse cx="19" cy="17" rx="4" ry="2.5" fill="white" opacity="0.25" transform="rotate(-30 19 17)" />
+    </svg>
+  );
+}
 
 const navLinks = [
   { label: 'Equipo', to: '/equipo' },
@@ -43,7 +79,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-primary-900/95 backdrop-blur-xl border-b border-primary-700/50 shadow-[0_1px_20px_rgba(0,0,0,0.4)]'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-primary-200 shadow-navbar'
           : 'bg-transparent'
       }`}
     >
@@ -55,16 +91,16 @@ export default function Navbar() {
             className="flex items-center gap-3 group z-10"
             aria-label="Ir al inicio"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-success flex items-center justify-center flex-shrink-0 shadow-glow group-hover:shadow-glow-lg transition-shadow duration-300">
-              <BookOpen className="w-5 h-5 text-white" />
+            <div className="flex-shrink-0 drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300 group-hover:scale-105">
+              <GrapefruitLogo size={40} />
             </div>
-            <span className="font-bold text-lg text-white hidden sm:block leading-tight">
+            <span className="font-bold text-lg text-primary-800 hidden sm:block leading-tight tracking-tight">
               {team.name}
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-4 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 whitespace-nowrap">
+          <div className="hidden lg:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 whitespace-nowrap">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.label} className="relative">
@@ -90,7 +126,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.97 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-2 w-64 bg-surface border border-primary-700 rounded-xl shadow-card overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-64 bg-white border border-primary-200 rounded-xl shadow-card overflow-hidden"
                         role="menu"
                       >
                         <div className="p-1">
@@ -99,10 +135,10 @@ export default function Navbar() {
                               key={child.to}
                               to={child.to}
                               className={({ isActive }) =>
-                                `block px-4 py-2.5 text-sm rounded-lg transition-colors duration-150 ${
+                                `block px-4 py-2.5 text-sm rounded-lg transition-colors duration-150 font-medium ${
                                   isActive
-                                    ? 'bg-accent/15 text-accent'
-                                    : 'text-primary-300 hover:text-white hover:bg-primary-800'
+                                    ? 'bg-blush-100 text-accent'
+                                    : 'text-primary-600 hover:text-primary-900 hover:bg-surface-raised'
                                 }`
                               }
                               role="menuitem"
@@ -131,11 +167,9 @@ export default function Navbar() {
             )}
           </div>
 
-
-
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-lg text-primary-300 hover:text-white hover:bg-primary-800 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-primary-500 hover:text-primary-800 hover:bg-surface-overlay transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isOpen}
@@ -153,7 +187,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-primary-900/98 backdrop-blur-xl border-b border-primary-700"
+            className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-primary-200"
           >
             <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1" aria-label="Menú móvil">
               {navLinks.map((link) => (
@@ -162,24 +196,24 @@ export default function Navbar() {
                     to={link.to}
                     end={link.to === '/'}
                     className={({ isActive }) =>
-                      `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                      `block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                         isActive
-                          ? 'bg-accent/15 text-accent'
-                          : 'text-primary-300 hover:text-white hover:bg-primary-800'
+                          ? 'bg-blush-100 text-accent'
+                          : 'text-primary-600 hover:text-primary-900 hover:bg-surface-overlay'
                       }`
                     }
                   >
                     {link.label}
                   </NavLink>
                   {link.children && (
-                    <div className="ml-4 mt-1 space-y-1 border-l border-primary-700 pl-4">
+                    <div className="ml-4 mt-1 space-y-1 border-l border-primary-300 pl-4">
                       {link.children.map((child) => (
                         <NavLink
                           key={child.to}
                           to={child.to}
                           className={({ isActive }) =>
-                            `block py-2 text-xs transition-colors ${
-                              isActive ? 'text-accent' : 'text-primary-500 hover:text-primary-200'
+                            `block py-2 text-xs font-medium transition-colors ${
+                              isActive ? 'text-accent' : 'text-primary-400 hover:text-primary-700'
                             }`
                           }
                         >
@@ -190,7 +224,6 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-
             </nav>
           </motion.div>
         )}

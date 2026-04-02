@@ -1,6 +1,32 @@
 import { Link } from 'react-router-dom';
-import { BookOpen } from 'lucide-react';
 import { team } from '../../data/teamData';
+
+// SVG logo de pomelo rosado (mismo que Navbar)
+function GrapefruitLogo({ size = 36 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="24" cy="24" r="22" fill="#F9C74F" />
+      <circle cx="24" cy="24" r="18" fill="#F4A261" />
+      <circle cx="24" cy="24" r="14" fill="#F07A95" />
+      <g stroke="#FDF6F0" strokeWidth="1.2" strokeLinecap="round" opacity="0.9">
+        <line x1="24" y1="10" x2="24" y2="38" />
+        <line x1="10" y1="24" x2="38" y2="24" />
+        <line x1="14.1" y1="14.1" x2="33.9" y2="33.9" />
+        <line x1="33.9" y1="14.1" x2="14.1" y2="33.9" />
+      </g>
+      <circle cx="24" cy="24" r="3" fill="#E8547A" opacity="0.8" />
+      <circle cx="24" cy="24" r="1.5" fill="#FDF6F0" opacity="0.9" />
+      <ellipse cx="19" cy="17" rx="4" ry="2.5" fill="white" opacity="0.25" transform="rotate(-30 19 17)" />
+    </svg>
+  );
+}
 
 const footerLinks = [
   {
@@ -29,18 +55,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-950 border-t border-primary-700/50 mt-auto" role="contentinfo">
+    <footer className="bg-primary-200 border-t border-primary-300/60 mt-auto" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent to-success flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-shadow duration-300">
-                <BookOpen className="w-4 h-4 text-white" />
+              <div className="flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <GrapefruitLogo size={36} />
               </div>
-              <span className="font-bold text-white text-lg">{team.name}</span>
+              <span className="font-bold text-primary-800 text-lg">{team.name}</span>
             </Link>
-            <p className="text-primary-400 text-sm leading-relaxed max-w-sm mb-4">
+            <p className="text-primary-600 text-sm leading-relaxed max-w-sm mb-4">
               {team.tagline}
             </p>
             <p className="text-primary-500 text-xs leading-relaxed max-w-sm">
@@ -58,7 +84,7 @@ export default function Footer() {
           {/* Links */}
           {footerLinks.map((group) => (
             <div key={group.heading}>
-              <h3 className="text-xs font-semibold text-primary-400 uppercase tracking-widest mb-4">
+              <h3 className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-4">
                 {group.heading}
               </h3>
               <ul className="space-y-2.5">
@@ -66,9 +92,9 @@ export default function Footer() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-sm text-primary-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5"
+                      className="text-sm text-primary-500 hover:text-accent transition-colors duration-200 flex items-center gap-2 group"
                     >
-                      <span className="w-1 h-1 rounded-full bg-primary-600 group-hover:bg-accent flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-warm/50 group-hover:bg-accent flex-shrink-0 transition-colors duration-200"></span>
                       {link.label}
                     </Link>
                   </li>
@@ -79,11 +105,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-primary-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-6 border-t border-primary-300/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-primary-500 text-xs text-center sm:text-left">
             © {currentYear} · {team.name} · UTN FRRe · Ingeniería en Sistemas de Información
           </p>
-          <p className="text-primary-600 text-xs">
+          <p className="text-primary-400 text-xs">
             Portfolio académico — Gestión Gerencial 2026
           </p>
         </div>
