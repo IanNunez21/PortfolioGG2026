@@ -3,42 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { team } from '../../data/teamData';
-
-// SVG logo de pomelo rosado
-function GrapefruitLogo({ size = 40 }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Fondo circular — pulpa externa */}
-      <circle cx="24" cy="24" r="22" fill="#F9C74F" />
-      {/* Capa media — tono rosado */}
-      <circle cx="24" cy="24" r="18" fill="#F4A261" />
-      {/* Pulpa interna — rosa */}
-      <circle cx="24" cy="24" r="14" fill="#F07A95" />
-      {/* Segmentos del pomelo */}
-      <g stroke="#FDF6F0" strokeWidth="1.2" strokeLinecap="round" opacity="0.9">
-        {/* Línea vertical */}
-        <line x1="24" y1="10" x2="24" y2="38" />
-        {/* Línea horizontal */}
-        <line x1="10" y1="24" x2="38" y2="24" />
-        {/* Diagonales */}
-        <line x1="14.1" y1="14.1" x2="33.9" y2="33.9" />
-        <line x1="33.9" y1="14.1" x2="14.1" y2="33.9" />
-      </g>
-      {/* Centro brillante */}
-      <circle cx="24" cy="24" r="3" fill="#E8547A" opacity="0.8" />
-      <circle cx="24" cy="24" r="1.5" fill="#FDF6F0" opacity="0.9" />
-      {/* Brillo superior */}
-      <ellipse cx="19" cy="17" rx="4" ry="2.5" fill="white" opacity="0.25" transform="rotate(-30 19 17)" />
-    </svg>
-  );
-}
+import pomeroLogo from '../../assets/pomelo_rosado.png';
 
 const navLinks = [
   { label: 'Equipo', to: '/equipo' },
@@ -92,7 +57,11 @@ export default function Navbar() {
             aria-label="Ir al inicio"
           >
             <div className="flex-shrink-0 drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300 group-hover:scale-105">
-              <GrapefruitLogo size={40} />
+              <img
+                src={pomeroLogo}
+                alt="Pomelo Rosado Logo"
+                className="w-14 h-14 object-contain"
+              />
             </div>
             <span className="font-bold text-lg text-primary-800 hidden sm:block leading-tight tracking-tight">
               {team.name}
