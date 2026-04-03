@@ -194,3 +194,4 @@ export default function Navbar() {
     </header>
   );
 }
+{/* Esto es un comentario en JSX */ }
