@@ -1,8 +1,33 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users } from 'lucide-react';
-import pomeroLogo from '../../assets/pomelo_rosado.png';
 import { team } from '../../data/teamData';
+
+function GrapefruitLogo({ size = 96 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="24" cy="24" r="22" fill="#F9C74F" />
+      <circle cx="24" cy="24" r="18" fill="#F4A261" />
+      <circle cx="24" cy="24" r="14" fill="#F07A95" />
+      <g stroke="#FDF6F0" strokeWidth="1.2" strokeLinecap="round" opacity="0.9">
+        <line x1="24" y1="10" x2="24" y2="38" />
+        <line x1="10" y1="24" x2="38" y2="24" />
+        <line x1="14.1" y1="14.1" x2="33.9" y2="33.9" />
+        <line x1="33.9" y1="14.1" x2="14.1" y2="33.9" />
+      </g>
+      <circle cx="24" cy="24" r="3" fill="#E8547A" opacity="0.8" />
+      <circle cx="24" cy="24" r="1.5" fill="#FDF6F0" opacity="0.9" />
+      <ellipse cx="19" cy="17" rx="4" ry="2.5" fill="white" opacity="0.25" transform="rotate(-30 19 17)" />
+    </svg>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -28,21 +53,13 @@ export default function HeroSection() {
           className="flex justify-center mb-8"
           aria-hidden="true"
         >
-          <motion.div
-            className="relative"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="drop-shadow-lg">
-              <img
-                src={pomeroLogo}
-                alt="Pomelo Rosado Logo"
-                className="w-32 h-32 object-contain"
-              />
+          <div className="relative">
+            <div className="animate-float drop-shadow-lg">
+              <GrapefruitLogo size={96} />
             </div>
             {/* Aura cálida */}
-            <div className="absolute inset-0 w-32 h-32 rounded-full bg-accent/20 blur-2xl scale-150 -z-10" />
-          </motion.div>
+            <div className="absolute inset-0 w-24 h-24 rounded-full bg-accent/20 blur-2xl scale-150 -z-10" />
+          </div>
         </motion.div>
 
         {/* Nombre del equipo */}
@@ -76,4 +93,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+} 
