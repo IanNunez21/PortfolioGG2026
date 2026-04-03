@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { team } from '../data/teamData';
 
 export default function Equipo() {
+
   return (
     <section className="min-h-[calc(100dvh-5rem)] flex flex-col items-center justify-center p-6 relative">
       {/* Fondo decorativo */}
@@ -19,8 +20,47 @@ export default function Equipo() {
           El Equipo
         </h1>
 
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full max-w-6xl mx-auto">
+          {[
+            { nombre: "Denise Pujalte", desc: "Gestión y diseño", img: "/denisep.png"},
+            { nombre: "Denise Martinez", desc: "Gestión y planificación", img: "/denisem.png"},
+            { nombre: "Zaira Rosin", desc: "Análisis y diseño", img: "/zaira.png"},
+            { nombre: "Ian Nuñez", desc: "Planificación y análisis", img: "/ian.png"},
+            { nombre: "Amilcar Aguirre", desc: "Análisis estratégico", img: "/amilcar.png"},
+          ].map((persona, index) => (
+
+            <div key={index} className="group text-center">
+
+              {/* NOMBRE ARRIBA */}
+              <h2 className="font-semibold mb-2">{persona.nombre}</h2>
+
+            <div className="w-full aspect-square rounded-2xl overflow-hidden border-4 border-gray-300 group-hover:border-primary-500 transition-all duration-300">
+              <img 
+                src={persona.img}
+                alt={persona.nombre}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+              {/* DESCRIPCIÓN ABAJO (HOVER) */}
+              <div className="max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-300">
+                <p className="mt-2 text-sm text-gray-600">
+                  {persona.desc}
+                </p>
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-16 mb-6 text-gradient">
+          Presentación
+        </h2>
+
         {/* Espacio reservado para el video */}
-        <div className="mt-16 sm:mt-20 w-full aspect-video rounded-3xl border border-dashed border-primary-300 bg-primary-200/40 flex flex-col gap-3 items-center justify-center hover:bg-primary-200/60 transition-colors">
+        <div className="mt-16 sm:mt-20 w-full aspect-video rounded-3xl border border-dashed border-primary-300 bg-primary-200/40 flex flex-col gap-3 items-center hover:bg-primary-200/60 transition-colors">
           <svg className="w-10 h-10 text-warm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
