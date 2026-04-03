@@ -16,17 +16,17 @@ export default function Equipo() {
         transition={{ duration: 0.5 }}
         className="text-center relative z-10 w-full max-w-4xl mx-auto mt-8 md:mt-0"
       >
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-gradient leading-tight tracking-tight">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 text-gradient leading-normal tracking-tight pb-2">
           El Equipo
         </h1>
 
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full max-w-6xl mx-auto">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full max-w-6xl mx-auto">
           {[
-            { nombre: "Denise Pujalte", desc: "Gestión y diseño", img: "/denisep.png"},
-            { nombre: "Denise Martinez", desc: "Gestión y planificación", img: "/denisem.png"},
-            { nombre: "Zaira Rosin", desc: "Análisis y diseño", img: "/zaira.png"},
-            { nombre: "Ian Nuñez", desc: "Planificación y análisis", img: "/ian.png"},
-            { nombre: "Amilcar Aguirre", desc: "Análisis estratégico", img: "/amilcar.png"},
+            { nombre: "Denise Pujalte", desc: "Gestión y diseño", img: "/denisep.png" },
+            { nombre: "Denise Martinez", desc: "Gestión y planificación", img: "/denisem.png" },
+            { nombre: "Zaira Rosin", desc: "Análisis y diseño", img: "/zaira.png" },
+            { nombre: "Ian Nuñez", desc: "Planificación y análisis", img: "/ian.png" },
+            { nombre: "Amilcar Aguirre", desc: "Análisis estratégico", img: "/amilcar.png" },
           ].map((persona, index) => (
 
             <div key={index} className="group text-center">
@@ -34,13 +34,13 @@ export default function Equipo() {
               {/* NOMBRE ARRIBA */}
               <h2 className="font-semibold mb-2">{persona.nombre}</h2>
 
-            <div className="w-full aspect-square rounded-2xl overflow-hidden border-4 border-gray-300 group-hover:border-primary-500 transition-all duration-300">
-              <img 
-                src={persona.img}
-                alt={persona.nombre}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+              <div className="w-full aspect-square rounded-2xl overflow-hidden border-4 border-gray-300 group-hover:border-primary-500 transition-all duration-300">
+                <img
+                  src={persona.img}
+                  alt={persona.nombre}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
 
               {/* DESCRIPCIÓN ABAJO (HOVER) */}
               <div className="max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-300">
