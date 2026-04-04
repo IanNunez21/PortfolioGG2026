@@ -43,8 +43,8 @@ export default function Equipo() {
               </div>
 
               {/* DESCRIPCIÓN ABAJO (HOVER) */}
-              <div className="max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-300">
-                <p className="mt-2 text-sm text-gray-600">
+              <div className="h-8 mt-2">
+                <p className="text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {persona.desc}
                 </p>
               </div>
@@ -55,20 +55,28 @@ export default function Equipo() {
 
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-16 mb-6 text-gradient">
+        <a
+          href="#presentacion-video"
+          className="block text-3xl sm:text-4xl md:text-5xl font-bold mt-20 mb-6 text-gradient hover:opacity-80 transition-opacity duration-200"
+        >
           Presentación
-        </h2>
+        </a>
 
         {/* Espacio reservado para el video */}
-        <div className="mt-16 sm:mt-20 w-full aspect-video rounded-3xl border border-dashed border-primary-300 bg-primary-200/40 flex flex-col gap-3 items-center hover:bg-primary-200/60 transition-colors">
+        <div
+          id="presentacion-video"
+          className="mt-8 sm:mt-8 w-full aspect-video rounded-3xl border border-dashed border-primary-300 bg-primary-200/40 flex flex-col gap-3 items-center hover:bg-primary-200/60 transition-colors"
+        >
+          {/*
           <svg className="w-10 h-10 text-warm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <p className="text-warm-dark font-medium text-lg">Espacio reservado para Canva / YouTube</p>
           <p className="text-primary-500 text-sm">Podés insertar tu código de embed (iframe) aquí mismo más adelante.</p>
+          */}
         </div>
       </motion.div>
     </section>
   );
-} 
+}
