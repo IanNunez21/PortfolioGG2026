@@ -9,7 +9,7 @@ export const team = {
   shortTagline: "Gestión Gerencial 2026 — UTN FRRe",
   description:
     "Somos un equipo de estudiantes avanzados de la carrera Ingeniería en Sistemas de Información de la UTN Facultad Regional Resistencia. A lo largo de la cursada de Gestión Gerencial desarrollamos un conjunto de desafíos prácticos que nos permitieron integrar conceptos de gestión, tecnología y trabajo colaborativo en contextos organizacionales reales.",
-  videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // ← Reemplazá con tu video real
+  videoUrl: "https://www.youtube.com/embed/hV3_f9YS2_Q", // Video presentación equipo
   logoInitials: "GPR", // Se usa como placeholder del logo
 };
 
