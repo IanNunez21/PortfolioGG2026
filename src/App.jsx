@@ -8,6 +8,8 @@ import Mapas from './pages/Mapas';
 import Desafios from './pages/Desafios';
 import DesafioDetalle from './pages/DesafioDetalle';
 import Tpi from './pages/Tpi';
+import Actividades from './pages/Actividades';
+import TestsLiderazgo from './pages/TestsLiderazgo';
 
 // Componente para scroll al tope en cada cambio de ruta
 function ScrollRestoration() {
@@ -31,6 +33,8 @@ function AppRoutes() {
           <Route path="/desafios" element={<Desafios />} />
           <Route path="/desafios/:id" element={<DesafioDetalle />} />
           <Route path="/tpi" element={<Tpi />} />
+          <Route path="/actividades" element={<Actividades />} />
+          <Route path="/actividades/tests-liderazgo" element={<TestsLiderazgo />} />
           {/* Fallback — redirige al home */}
           <Route path="*" element={<Home />} />
         </Routes>

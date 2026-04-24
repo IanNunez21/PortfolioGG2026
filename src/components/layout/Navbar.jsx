@@ -21,6 +21,7 @@ const navLinks = [
   { label: 'RPA', to: '/rpa' },
   { label: 'Mapas', to: '/mapas' },
   { label: 'TPI', to: '/tpi' },
+  { label: 'Actividades', to: '/actividades' },
 ];
 
 export default function Navbar() {

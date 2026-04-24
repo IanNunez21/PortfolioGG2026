@@ -37,6 +37,7 @@ const footerLinks = [
       { label: 'RPA', to: '/rpa' },
       { label: 'Mapas Conceptuales', to: '/mapas' },
       { label: 'TPI', to: '/tpi' },
+      { label: 'Actividades', to: '/actividades' },
     ],
   },
   {
