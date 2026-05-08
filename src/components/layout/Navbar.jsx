@@ -57,6 +57,10 @@ const navLinks = [
     children: [
       { label: 'Ver todos los desafíos', to: '/desafios', exact: true },
       { label: 'Desafío 3', to: '/desafios/d3' },
+      { label: 'Desafío 4', to: '/desafios/d4' },
+      { label: 'Desafío 5', to: '/desafios/d5' },
+      { label: 'Desafío 6', to: '/desafios/d6' },
+      { label: 'Desafío 7', to: '/desafios/d7' },
     ],
   },
   { label: 'RPA', to: '/rpa' },
