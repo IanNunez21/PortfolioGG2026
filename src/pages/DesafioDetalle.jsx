@@ -1,7 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Wrench, BookOpen, AlertCircle, Lightbulb, Star } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowLeft, ExternalLink, Wrench, BookOpen, AlertCircle, Lightbulb, Star, Maximize2, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { getChallengeById } from '../data/challengesData';
  
 const iconMap = {
@@ -45,15 +45,15 @@ function formatMoney(value) {
   return `$${Math.round(value).toLocaleString('es-AR')}`;
 }
 
-function BreakEvenChart({ config }) {
+function BreakEvenChart({ config, onExpand, expanded = false }) {
   const { p, cvu, cf, maxQ, xLabel } = config;
   const [hoverQ, setHoverQ] = useState(null);
 
   const peQ = cf / (p - cvu);
   const maxY = Math.max(maxQ * p, cf + maxQ * cvu) * 1.08;
 
-  const width = 760;
-  const height = 300;
+  const width = expanded ? 1200 : 920;
+  const height = expanded ? 520 : 380;
   const padLeft = 56;
   const padRight = 20;
   const padTop = 20;
@@ -94,6 +94,18 @@ function BreakEvenChart({ config }) {
 
   return (
     <div className="rounded-xl border border-primary-200 bg-white p-3 mt-3">
+      {!expanded && onExpand && (
+        <div className="flex justify-end mb-2">
+          <button
+            type="button"
+            onClick={() => onExpand(config)}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-600 hover:text-accent transition-colors"
+          >
+            <Maximize2 className="w-3.5 h-3.5" />
+            Ampliar gráfica
+          </button>
+        </div>
+      )}
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto">
         <rect x={padLeft} y={padTop} width={innerW} height={innerH} fill="#FDF6F0" />
 
@@ -163,12 +175,21 @@ function BreakEvenChart({ config }) {
 export default function DesafioDetalle() {
   const { id } = useParams();
   const challenge = getChallengeById(id);
+  const [expandedChartConfig, setExpandedChartConfig] = useState(null);
   const comingSoonById = {
     d5: { number: "D5", title: "Desafío en construcción" },
     d6: { number: "D6", title: "Desafío en construcción" },
     d7: { number: "D7", title: "Desafío en construcción" },
   };
   const comingSoon = comingSoonById[id];
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setExpandedChartConfig(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
  
   if (!challenge && !comingSoon) return <Navigate to="/desafios" replace />;
 
@@ -405,10 +426,10 @@ export default function DesafioDetalle() {
                         </div>
                       )}
 
-                      {exercise.chart && <BreakEvenChart config={exercise.chart} />}
+                      {exercise.chart && <BreakEvenChart config={exercise.chart} onExpand={setExpandedChartConfig} />}
 
                       {exercise.scenarios && (
-                        <div className="grid md:grid-cols-3 gap-3 mt-3">
+                        <div className="space-y-3 mt-3">
                           {exercise.scenarios.map((scenario) => (
                             <div key={scenario.name} className="rounded-lg border border-primary-200 bg-white p-3">
                               <h4 className="font-bold text-primary-800 mb-2">{scenario.name}</h4>
@@ -418,7 +439,10 @@ export default function DesafioDetalle() {
                                 ))}
                               </div>
                               <p className="text-sm text-primary-700">{scenario.result}</p>
-                              <BreakEvenChart config={scenario.chart} />
+                              {scenario.note && (
+                                <p className="text-sm font-bold text-primary-900 mt-1">{scenario.note}</p>
+                              )}
+                              <BreakEvenChart config={scenario.chart} onExpand={setExpandedChartConfig} />
                             </div>
                           ))}
                         </div>
@@ -474,6 +498,23 @@ export default function DesafioDetalle() {
  
         </div>
       </div>
+
+      {expandedChartConfig && (
+        <div className="fixed inset-0 z-[60] bg-primary-950/70 backdrop-blur-sm p-3 sm:p-6 flex items-center justify-center">
+          <div className="w-full max-w-6xl bg-white rounded-2xl border border-primary-200 shadow-card p-3 sm:p-5 relative">
+            <button
+              type="button"
+              onClick={() => setExpandedChartConfig(null)}
+              className="absolute top-3 right-3 inline-flex items-center gap-1 text-primary-500 hover:text-accent"
+              aria-label="Cerrar modal de gráfica"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <p className="text-sm font-bold text-primary-800 mb-2">Vista ampliada del gráfico</p>
+            <BreakEvenChart config={expandedChartConfig} expanded />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
