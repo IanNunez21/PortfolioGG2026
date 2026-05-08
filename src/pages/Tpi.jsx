@@ -22,7 +22,7 @@ export default function Tpi() {
         </h1>
         <span className="badge badge-blue mb-4">En construcción</span>
         <p className="text-primary-600 text-lg sm:text-xl max-w-md mx-auto">
-          Estamos trabajando en el contenido de esta sección. ¡Próximamente esta
+          Estamos trabajando en el contenido de esta sección. ¡Próximamente estará disponible!
         </p>
       </motion.div>
     </section>
