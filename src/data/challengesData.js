@@ -234,6 +234,213 @@ export const challenges = [
       competencies: ["Análisis de costos", "Resolución cuantitativa", "Interpretación de gráficos", "Comunicación técnica"],
     },
   },
+    {
+    id: "d7",
+    number: "D7",
+    title: "Diagrama de Ishikawa",
+    subtitle: "Gestión Gerencial · Desafío 7",
+    summary:
+      "Análisis de causa y efecto aplicando el Diagrama de Ishikawa (6M) para identificar las raíces de un problema de retrasos en el embarque. Se realizó una conexión directa al TPI del equipo realizando el mismo análisis.",
+    color: "from-accent to-warm",
+    colorBg: "bg-accent/10",
+    borderColor: "border-accent/30",
+    tools: ["Diagrama de Ishikawa", "Análisis de causa-efecto", "6M", "Canva"],
+    problem:
+      "Identificar las causas raíz de los problemas, organizando los factores en las 6 categorías (6M) del Diagrama de Ishikawa y determinando la M más crítica.",
+    solution:
+      "Construimos un Diagrama de Ishikawa con seis ramas (Personas, Políticas y Procedimientos, Materiales, Máquinas y Equipos, Medio Ambiente/Entorno y Medición), identificando como causa raíz sistémica la rama de Políticas y Procedimientos, ya que actúa como amplificador de todos los demás problemas.",
+    canvasLink: "https://canva.link/rm8esi4kox5pk36",
+    ishikawa: {
+      effect: "Demasiados vuelos con retraso en el embarque",
+      criticalM: {
+        name: "Políticas y Procedimientos",
+        justification:
+          "Esta rama es la raíz sistémica. Todos los demás problemas —el comportamiento del personal, el uso inadecuado de los equipos, los errores de datos— son consecuencia o se amplifican por la falta de procedimientos claros, protocolos de contingencia y sistemas de asignación bien definidos. Los horarios mal diseñados amplían el impacto de los retrasos de equipaje, las fallas mecánicas y los problemas de tripulación. Sin márgenes de tolerancia en la planificación, cualquier incidente menor en otra M se convierte automáticamente en un retraso de embarque.",
+      },
+      branches: [
+        {
+          id: "m1",
+          name: "Personas",
+          causes: [
+            "Personal desmotivado con bajo sentido de pertenencia.",
+            "Falta de capacitación en procedimientos de embarque y gestión de listas de espera.",
+            "Actitud negativa hacia el cliente que ralentiza la atención en mostrador.",
+            "Comunicación deficiente entre tripulación y personal en tierra.",
+          ],
+        },
+        {
+          id: "m2",
+          name: "Políticas y Procedimientos",
+          causes: [
+            "Horarios de tripulación mal diseñados sin margen para imprevistos.",
+            "Ausencia de protocolos de contingencia ante retrasos encadenados.",
+            "Asignación de tareas ambigua entre áreas (mostrador, puerta, equipaje).",
+            "Captación y entrada de datos inexacta que genera inconsistencias en listas de pasajeros.",
+            "Equipaje mal etiquetado desde el origen que retrasa la carga.",
+            "Sin procedimiento estandarizado para el manejo de equipaje entre líneas.",
+            "Comidas programadas que llegan fuera de tiempo a la aeronave.",
+          ],
+        },
+        {
+          id: "m3",
+          name: "Materiales",
+          causes: [
+            "Equipaje de origen retrasado.",
+            "Equipaje entre líneas aéreas retrasado.",
+            "Insumos de cocina de baja calidad que generan reprocesos y demoras en el servicio de comidas.",
+          ],
+        },
+        {
+          id: "m4",
+          name: "Máquinas y Equipos",
+          causes: [
+            "Sistemas de check-in y asignación de asientos obsoletos.",
+            "Software de gestión de turnos que no contempla retrasos previos.",
+            "Aeronaves con mayor tiempo de servicio que requieren más tiempo de inspección mecánica.",
+            "Computadoras lentas en mostradores que alargan el proceso de cada pasajero.",
+          ],
+        },
+        {
+          id: "m5",
+          name: "Medio Ambiente / Entorno",
+          causes: [
+            "Espacio reducido en cabina para equipaje de mano que obliga a detener el embarque.",
+            "Desperdicios en cocinas que generan costos adicionales y demoras logísticas.",
+            "Condiciones climáticas adversas no incorporadas en los planes de contingencia.",
+            "Terminal saturada por tráfico simultáneo de vuelos.",
+          ],
+        },
+        {
+          id: "m6",
+          name: "Medición",
+          causes: [
+            "Datos de entrada inexactos que impiden proyectar tiempos reales de embarque.",
+            "Ausencia de KPIs monitoreados en tiempo real (tiempo por pasajero, estado de equipaje, etc.).",
+          ],
+        },
+      ],
+    },
+    tpiConnection: {
+      organization: "S&M Servicios y Materiales",
+      fishHead: {
+        title: "La Cabeza del Pescado del TPI",
+        problem:
+          "El problema central es la ausencia de un sistema digitalizado de gestión de pedidos y administración en S&M Servicios y Materiales.",
+        isProblemOrSymptom: "Problema organizacional medible",
+        metrics: [
+          "Al menos 24 horas semanales dedicadas a tareas administrativas manuales.",
+          "Los presupuestos tardan entre 48 y 72 horas en confeccionarse.",
+          "El seguimiento de cada pedido depende de la memoria del socio.",
+          "Capacidad máxima de producción simultánea de 5 a 6 proyectos sin posibilidad de escalar.",
+        ],
+        symptoms: [
+          "Posibles demoras en la entrega de productos por falta de seguimiento del avance en taller.",
+          "Pedidos a proveedores con materiales o herrajes incorrectos.",
+          "Olvidos de encargos de insumos.",
+          "Desconocimiento del stock real disponible de la línea Camilo.",
+          "Presupuestos que demoran más de lo esperado.",
+        ],
+      },
+      ishikawaTPI: {
+        effect: "Ausencia de sistema de gestión de pedidos y administración",
+        criticalM: {
+          name: "Métodos",
+          justification:
+            "Los procesos hechos de memoria son la causa original: la empresa nunca formalizó sus flujos de trabajo porque el volumen actual lo permitía y la coordinación oral entre cinco personas funcionaba. Esa cultura de procesos informales es lo que después hace imposible implementar cualquier herramienta tecnológica, porque no hay nada estructurado que digitalizar.",
+        },
+        branches: [
+          {
+            id: "tpi-m1",
+            name: "Mano de Obra",
+            causes: [
+              "Gerencia resistente al cambio digital.",
+              "Socios sobrecargados (ventas, diseño, compras y atención al cliente).",
+              "Riesgo de pérdida de empleados capacitados que abren negocios propios.",
+            ],
+          },
+          {
+            id: "tpi-m2",
+            name: "Métodos",
+            causes: [
+              "Consultas y pedidos gestionados por WhatsApp sin registro centralizado.",
+              "Trazabilidad de pedidos hecha a mano mediante planillas.",
+              "Presupuestación con demora de 48 a 72 hs sin historial de versiones.",
+              "Presencia obligatoria de un socio en cada etapa del proceso.",
+              "Conocimiento de diseño concentrado en un único socio.",
+            ],
+          },
+          {
+            id: "tpi-m3",
+            name: "Materiales",
+            causes: [
+              "Gestión de compras en papel y planillas sin integración.",
+              "Sin seguimiento de órdenes a proveedores.",
+              "Proveedores notifican faltantes de stock con demora.",
+            ],
+          },
+          {
+            id: "tpi-m4",
+            name: "Máquina / Software",
+            causes: [
+              "Sin software de gestión de pedidos.",
+              "Sin software administrativo ni contable.",
+              "Brecha tecnológica: diseño digitalizado pero administración 100% manual.",
+            ],
+          },
+          {
+            id: "tpi-m5",
+            name: "Medio Ambiente",
+            causes: [
+              "Sector altamente competitivo con nuevos actores 100% digitales.",
+              "Contexto económico adverso que desincentiva la inversión en tecnología.",
+            ],
+          },
+          {
+            id: "tpi-m6",
+            name: "Medición",
+            causes: [
+              "Rentabilidad desconocida por línea de negocio.",
+              "Sin cuantificación de pérdidas por retrasos o errores de fabricación.",
+              "Sin metas formales de ventas ni producción.",
+              "Sin indicadores de rendimiento (KPIs) de ningún tipo.",
+            ],
+          },
+        ],
+        missingKPIs: [
+          "Rentabilidad por línea de negocio (muebles a medida, línea Camilo, venta de insumos).",
+          "Tiempo real de producción por proyecto para detectar desvíos antes de incumplir plazos.",
+          "Tasa de conversión de consultas a ventas.",
+          "Tiempo entre consulta del cliente y entrega del presupuesto.",
+        ],
+        informalProcesses: [
+          "Captación de consultas sin flujo definido: llega por WhatsApp y queda en el historial sin registro estructurado.",
+          "Elaboración de presupuestos con planilla Excel sin versiones ni historial de cambios.",
+          "Seguimiento del estado de producción por supervisión visual diaria del socio, sin registro escrito.",
+          "Coordinación con proveedores por conversación, sin registro formal.",
+          "Cierre contable mensual sin registros diarios de ingresos y egresos.",
+        ],
+        techGap:
+          "La empresa usa AutoCAD, SketchUp, software de render e IA para el diseño (herramientas avanzadas), pero toda la gestión operativa corre por WhatsApp y planillas Excel. El propio WhatsApp genera trabas al mezclar comunicación comercial con coordinación interna.",
+        proposedSolution:
+          "La propuesta que realmente ataca la raíz debe hacer dos cosas en simultáneo: primero documentar y estandarizar los procesos clave (captación de consultas, seguimiento de producción, compras a proveedores), y recién entonces implementar una herramienta simple y de bajo costo que los soporte.",
+      },
+    },
+    evidences: [],
+    reflection: {
+      learned:
+        "Aprendimos que un diagrama de causa-efecto no sirve solo para listar problemas: lo más valioso es identificar cuál de las 6M actúa como causa raíz sistémica. En el caso de la aerolínea, los Políticas y Procedimientos amplifican todas las demás fallas. Al aplicarlo al TPI de S&M, confirmamos que la raíz está en la informalidad de los Métodos, y que implementar software sin antes documentar procesos sería una solución superficial.",
+      difficulties:
+        "El mayor desafío fue distinguir entre síntomas y causas reales. Al principio tendíamos a listar efectos visibles (demoras, olvidos) en lugar de las causas estructurales que los generan.",
+      improvements:
+        "Con más tiempo, cuantificaríamos el impacto económico de cada causa para priorizar cuáles atacar primero y construir un plan de mejora escalonado.",
+      competencies: [
+        "Análisis sistémico",
+        "Pensamiento crítico",
+        "Diagnóstico organizacional",
+        "Conexión teoría-práctica",
+      ],
+    },
+  },
 ];
 
 // Helper para obtener un desafío por ID

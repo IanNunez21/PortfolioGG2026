@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Wrench, BookOpen, AlertCircle, Lightbulb, Star, Maximize2, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { getChallengeById } from '../data/challengesData';
+import IshikawaChart from '../components/ui/IshikawaChart';
  
 const iconMap = {
   link: ExternalLink,
@@ -172,6 +173,88 @@ function BreakEvenChart({ config, onExpand, expanded = false }) {
   );
 }
  
+function IshikawaSection({ ishikawa }) {
+  const branchColors = {
+    "m1": "border-pink-300 bg-pink-50",
+    "m2": "border-purple-300 bg-purple-50",
+    "m3": "border-orange-300 bg-orange-50",
+    "m4": "border-teal-300 bg-teal-50",
+    "m5": "border-blue-300 bg-blue-50",
+    "m6": "border-amber-300 bg-amber-50",
+    "tpi-m1": "border-pink-300 bg-pink-50",
+    "tpi-m2": "border-purple-300 bg-purple-50",
+    "tpi-m3": "border-orange-300 bg-orange-50",
+    "tpi-m4": "border-teal-300 bg-teal-50",
+    "tpi-m5": "border-blue-300 bg-blue-50",
+    "tpi-m6": "border-amber-300 bg-amber-50",
+  };
+
+  const badgeColors = {
+    "m1": "bg-pink-100 text-pink-800",
+    "m2": "bg-purple-100 text-purple-800",
+    "m3": "bg-orange-100 text-orange-800",
+    "m4": "bg-teal-100 text-teal-800",
+    "m5": "bg-blue-100 text-blue-800",
+    "m6": "bg-amber-100 text-amber-800",
+    "tpi-m1": "bg-pink-100 text-pink-800",
+    "tpi-m2": "bg-purple-100 text-purple-800",
+    "tpi-m3": "bg-orange-100 text-orange-800",
+    "tpi-m4": "bg-teal-100 text-teal-800",
+    "tpi-m5": "bg-blue-100 text-blue-800",
+    "tpi-m6": "bg-amber-100 text-amber-800",
+  };
+
+  return (
+    <div className="space-y-4">
+
+      {/* Efecto / cabeza del pescado */}
+      <div className="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3 flex items-center gap-3">
+        <span className="text-xs font-bold text-red-500 uppercase tracking-widest flex-shrink-0">Efecto</span>
+        <p className="text-sm font-extrabold text-red-800">{ishikawa.effect}</p>
+      </div>
+
+      {/* Ramas / 6M */}
+      <div className="space-y-3">
+        {ishikawa.branches.map((branch) => (
+          <div
+            key={branch.id}
+            className={`rounded-xl border-l-4 p-4 ${branchColors[branch.id] ?? "border-primary-300 bg-primary-50"}`}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${badgeColors[branch.id] ?? "bg-primary-100 text-primary-800"}`}>
+                {branch.name}
+                {branch.id === ishikawa.criticalM?.name?.toLowerCase().replace(/ /g, "-") && " ★"}
+              </span>
+              {ishikawa.criticalM && branch.name === ishikawa.criticalM.name && (
+                <span className="text-xs font-bold text-red-500">★ M más crítica</span>
+              )}
+            </div>
+            <ul className="space-y-1">
+              {branch.causes.map((cause, i) => (
+                <li key={i} className="text-sm text-primary-700 flex items-start gap-2">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0 opacity-40" />
+                  {cause}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* M más crítica — justificación */}
+      {ishikawa.criticalM && (
+        <div className="rounded-xl border border-purple-200 bg-purple-50 p-4">
+          <p className="text-xs font-bold text-purple-500 uppercase tracking-widest mb-1">
+            ★ M más crítica — {ishikawa.criticalM.name}
+          </p>
+          <p className="text-sm text-primary-700 leading-relaxed">{ishikawa.criticalM.justification}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 export default function DesafioDetalle() {
   const { id } = useParams();
   const challenge = getChallengeById(id);
@@ -353,6 +436,132 @@ export default function DesafioDetalle() {
               </ul>
             </Section>
           )}
+          {challenge.ishikawa && (
+            <>
+              {/* Link al canvas de Canva */}
+              {challenge.canvasLink && (
+                <Section icon={ExternalLink} title="Diagrama en Canva" delay={0.22}>
+                  <a
+                    href={challenge.canvasLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark font-medium transition-colors duration-200 group"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                    Ver diagrama completo en Canva
+                  </a>
+                  <p className="text-xs text-primary-400 ml-5 mt-0.5">
+                    Diagramas de Ishikawa elaborados por el equipo
+                  </p>
+                </Section>
+              )}
+
+              {/* Diagrama aerolínea */}
+              <Section icon={BookOpen} title="Diagrama de Ishikawa — Aerolínea" delay={0.24}>
+                <p className="text-sm text-primary-600 mb-4 leading-relaxed">
+                  Análisis de causa y efecto aplicando las 6M para identificar las raíces del problema
+                  de retrasos en embarque.
+                </p>
+                <IshikawaChart ishikawa={challenge.ishikawa} />
+              </Section>
+
+              {/* Reflexión TPI */}
+              {challenge.tpiConnection && (
+                <>
+                  <Section icon={AlertCircle} title={`Conexión con TPI — ${challenge.tpiConnection.organization}`} delay={0.26}>
+
+                    {/* Cabeza del pescado */}
+                    <div className="space-y-3">
+                      <div className="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                        <p className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">
+                          {challenge.tpiConnection.fishHead.title}
+                        </p>
+                        <p className="text-sm font-bold text-red-800 mb-2">
+                          {challenge.tpiConnection.fishHead.problem}
+                        </p>
+                        <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700">
+                          {challenge.tpiConnection.fishHead.isProblemOrSymptom}
+                        </span>
+                      </div>
+
+                      {/* Métricas del problema */}
+                      <div>
+                        <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                          Se puede medir porque...
+                        </p>
+                        <ul className="space-y-1">
+                          {challenge.tpiConnection.fishHead.metrics.map((m, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-primary-700">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                              {m}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Síntomas */}
+                      <div>
+                        <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                          Síntomas visibles en la operación
+                        </p>
+                        <ul className="space-y-1">
+                          {challenge.tpiConnection.fishHead.symptoms.map((s, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-primary-600 italic">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-300 flex-shrink-0" />
+                              {s}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </Section>
+
+                  {/* Diagrama Ishikawa TPI */}
+                  <Section icon={BookOpen} title={`Diagrama de Ishikawa — ${challenge.tpiConnection.organization}`} delay={0.28}>
+                    <IshikawaChart ishikawa={challenge.tpiConnection.ishikawaTPI} />
+                  </Section>
+
+                  {/* KPIs faltantes */}
+                  <Section icon={AlertCircle} title="KPIs que le faltan a S&M" delay={0.29}>
+                    <ul className="space-y-2">
+                      {challenge.tpiConnection.ishikawaTPI.missingKPIs.map((kpi, i) => (
+                        <li key={i} className="rounded-lg border-l-4 border-accent bg-white/80 p-3 text-sm text-primary-700">
+                          {kpi}
+                        </li>
+                      ))}
+                    </ul>
+                  </Section>
+
+                  {/* Procesos informales */}
+                  <Section icon={Wrench} title="Procesos que se hacen de memoria" delay={0.30}>
+                    <ul className="space-y-2">
+                      {challenge.tpiConnection.ishikawaTPI.informalProcesses.map((proc, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-primary-700">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+                          {proc}
+                        </li>
+                      ))}
+                    </ul>
+                  </Section>
+
+                  {/* Brecha tecnológica */}
+                  <Section icon={Lightbulb} title="Brecha tecnológica" delay={0.31}>
+                    <p className="text-sm text-primary-700 leading-relaxed">
+                      {challenge.tpiConnection.ishikawaTPI.techGap}
+                    </p>
+                  </Section>
+
+                  {/* Propuesta de solución */}
+                  <Section icon={Star} title="Propuesta que ataca la raíz" delay={0.32}>
+                    <p className="text-sm text-primary-700 leading-relaxed font-medium">
+                      {challenge.tpiConnection.ishikawaTPI.proposedSolution}
+                    </p>
+                  </Section>
+                </>
+              )}
+            </>
+          )}
+
 
           {/* Secciones específicas D4 */}
           {challenge.breakEven && (
