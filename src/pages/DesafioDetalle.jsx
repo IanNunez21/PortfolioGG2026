@@ -436,6 +436,242 @@ export default function DesafioDetalle() {
               </ul>
             </Section>
           )}
+          {challenge.gestionCambio && (
+            <>
+              {/* ── ACTIVIDAD 1 ── */}
+              <Section icon={BookOpen} title={challenge.gestionCambio.actividad1.title} delay={0.2}>
+                <p className="text-sm text-primary-600 leading-relaxed">
+                  {challenge.gestionCambio.actividad1.contexto}
+                </p>
+              </Section>
+          
+              {/* Diagnóstico — Fuerzas */}
+              <Section icon={AlertCircle} title={challenge.gestionCambio.actividad1.diagnostico.title} delay={0.22}>
+                <div className="space-y-4">
+          
+                  {/* Fuerzas externas */}
+                  <div>
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      Fuerzas Externas
+                    </p>
+                    <div className="space-y-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.fuerzasExternas.map((f, i) => (
+                        <div key={i} className="rounded-lg border-l-4 border-blue-400 bg-blue-50 p-3">
+                          <p className="text-sm font-bold text-blue-800 mb-1">{f.titulo}</p>
+                          <p className="text-sm text-primary-700">{f.descripcion}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+          
+                  {/* Fuerzas internas */}
+                  <div>
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      Fuerzas Internas
+                    </p>
+                    <div className="space-y-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.fuerzasInternas.map((f, i) => (
+                        <div key={i} className="rounded-lg border-l-4 border-orange-400 bg-orange-50 p-3">
+                          <p className="text-sm font-bold text-orange-800 mb-1">{f.titulo}</p>
+                          <p className="text-sm text-primary-700">{f.descripcion}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+          
+                  {/* Tipo de cambio */}
+                  <div className="rounded-xl border border-primary-200 bg-white/80 p-4">
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.tipoCambio.pregunta}
+                    </p>
+                    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 mb-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.tipoCambio.badge}
+                    </span>
+                    <p className="text-sm text-primary-700 leading-relaxed">
+                      {challenge.gestionCambio.actividad1.diagnostico.tipoCambio.respuesta}
+                    </p>
+                  </div>
+          
+                  {/* Velocidad del cambio */}
+                  <div className="rounded-xl border border-primary-200 bg-white/80 p-4">
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.velocidadCambio.pregunta}
+                    </p>
+                    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 mb-2">
+                      {challenge.gestionCambio.actividad1.diagnostico.velocidadCambio.badge}
+                    </span>
+                    <p className="text-sm text-primary-700 leading-relaxed mb-3">
+                      {challenge.gestionCambio.actividad1.diagnostico.velocidadCambio.respuesta}
+                    </p>
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">Impactos</p>
+                    <ul className="space-y-1">
+                      {challenge.gestionCambio.actividad1.diagnostico.velocidadCambio.impactos.map((imp, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-primary-700">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                          {imp}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-sm font-bold text-primary-800 mt-3 border-t border-primary-200 pt-3">
+                      {challenge.gestionCambio.actividad1.diagnostico.velocidadCambio.conclusion}
+                    </p>
+                  </div>
+                </div>
+              </Section>
+          
+              {/* Análisis de la resistencia */}
+              <Section icon={AlertCircle} title={challenge.gestionCambio.actividad1.resistencia.title} delay={0.24}>
+                <div className="space-y-4">
+          
+                  {/* Causas humanas */}
+                  <div>
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      Causas humanas y emocionales de la resistencia
+                    </p>
+                    <div className="space-y-2">
+                      {challenge.gestionCambio.actividad1.resistencia.causasHumanas.map((c, i) => (
+                        <div key={i} className="rounded-lg border-l-4 border-pink-400 bg-pink-50 p-3">
+                          <p className="text-sm font-bold text-pink-800 mb-1">{c.titulo}</p>
+                          <p className="text-sm text-primary-700">{c.descripcion}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+          
+                  {/* Errores de Valeria */}
+                  <div>
+                    <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">
+                      Errores graves de Valeria
+                    </p>
+                    <div className="space-y-2">
+                      {challenge.gestionCambio.actividad1.resistencia.erroresValeria.map((e, i) => (
+                        <div key={i} className="rounded-lg border-l-4 border-red-400 bg-red-50 p-3">
+                          <p className="text-sm font-bold text-red-800 mb-1">{e.titulo}</p>
+                          <p className="text-sm text-primary-700">{e.descripcion}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Section>
+          
+              {/* Plan de acción */}
+              <Section icon={Lightbulb} title={challenge.gestionCambio.actividad1.propuesta.title} delay={0.26}>
+                <div className="space-y-5">
+          
+                  {/* Acciones por fase */}
+                  {challenge.gestionCambio.actividad1.propuesta.acciones.map((accion, i) => {
+                    const badgeColors = ["bg-red-100 text-red-700", "bg-yellow-100 text-yellow-800", "bg-green-100 text-green-800"];
+                    const borderColors = ["border-red-300", "border-yellow-300", "border-green-300"];
+                    return (
+                      <div key={i} className={`rounded-xl border-l-4 p-4 bg-white/80 ${borderColors[i] ?? "border-primary-300"}`}>
+                        <div className="flex items-center gap-2 mb-3">
+                          <p className="text-sm font-extrabold text-primary-900">{accion.fase}</p>
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${badgeColors[i] ?? "bg-primary-100 text-primary-700"}`}>
+                            {accion.plazo}
+                          </span>
+                        </div>
+                        <ul className="space-y-1">
+                          {accion.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-primary-700">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+          
+                  {/* Modelo Kotter */}
+                  <div className="rounded-xl border border-purple-200 bg-purple-50 p-4">
+                    <p className="text-xs font-bold text-purple-500 uppercase tracking-widest mb-1">
+                      {challenge.gestionCambio.actividad1.propuesta.modeloKotter.title}
+                    </p>
+                    <p className="text-sm text-primary-700 leading-relaxed mb-4">
+                      {challenge.gestionCambio.actividad1.propuesta.modeloKotter.descripcion}
+                    </p>
+                    <div className="space-y-2">
+                      {challenge.gestionCambio.actividad1.propuesta.modeloKotter.pasos.map((paso) => (
+                        <div key={paso.numero} className="flex items-start gap-3 bg-white/80 rounded-lg p-3 border border-purple-100">
+                          <span className="w-6 h-6 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                            {paso.numero}
+                          </span>
+                          <div>
+                            <p className="text-sm font-bold text-primary-900">{paso.titulo}</p>
+                            <p className="text-sm text-primary-600">{paso.descripcion}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+          
+                  {/* Estrategia de comunicación */}
+                  <div className="rounded-xl border border-teal-200 bg-teal-50 p-4">
+                    <p className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-3">
+                      {challenge.gestionCambio.actividad1.propuesta.estrategiaComunicacion.title}
+                    </p>
+                    <div className="space-y-3">
+                      {challenge.gestionCambio.actividad1.propuesta.estrategiaComunicacion.fases.map((fase, i) => (
+                        <div key={i} className="bg-white/80 rounded-lg p-3 border border-teal-100">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-700">
+                              {fase.fase}
+                            </span>
+                            <p className="text-sm font-bold text-primary-800">{fase.titulo}</p>
+                          </div>
+                          <ul className="space-y-1">
+                            {fase.items.map((item, j) => (
+                              <li key={j} className="flex items-start gap-2 text-sm text-primary-700">
+                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+          
+                  {/* Transformación digital */}
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                    <p className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-1">
+                      {challenge.gestionCambio.actividad1.propuesta.transformacionDigital.pregunta}
+                    </p>
+                    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-blue-600 text-white mb-2">
+                      {challenge.gestionCambio.actividad1.propuesta.transformacionDigital.respuesta}
+                    </span>
+                    <p className="text-sm text-primary-700 leading-relaxed mb-3">
+                      {challenge.gestionCambio.actividad1.propuesta.transformacionDigital.justificacion}
+                    </p>
+                    <ul className="space-y-1 mb-3">
+                      {challenge.gestionCambio.actividad1.propuesta.transformacionDigital.criterios.map((c, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-primary-700">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-sm font-bold text-blue-800 border-t border-blue-200 pt-3">
+                      {challenge.gestionCambio.actividad1.propuesta.transformacionDigital.advertencia}
+                    </p>
+                  </div>
+                </div>
+              </Section>
+          
+              {/* ── ACTIVIDAD 2 ── */}
+              <Section icon={Star} title={challenge.gestionCambio.actividad2.title} delay={0.3}>
+                <div className="space-y-3">
+                  {challenge.gestionCambio.actividad2.preguntas.map((item) => (
+                    <div key={item.id} className="rounded-xl border border-primary-200 bg-white/80 p-4">
+                      <p className="text-sm font-extrabold text-primary-900 mb-2">{item.pregunta}</p>
+                      <p className="text-sm text-primary-700 leading-relaxed">{item.respuesta}</p>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            </>
+          )}
           {challenge.ishikawa && (
             <>
               {/* Link al canvas de Canva */}

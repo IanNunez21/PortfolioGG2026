@@ -234,6 +234,293 @@ export const challenges = [
       competencies: ["Análisis de costos", "Resolución cuantitativa", "Interpretación de gráficos", "Comunicación técnica"],
     },
   },
+  {
+    id: "d6",
+    number: "D6",
+    title: "Gestión del Cambio",
+    subtitle: "Gestión Gerencial · Desafío 6",
+    summary:
+      "Análisis del caso Almacenes del Norte S.A. para diagnosticar fuerzas de cambio, resistencias humanas y proponer un plan de acción basado en modelos de gestión del cambio.",
+    color: "from-accent to-warm",
+    colorBg: "bg-accent/10",
+    borderColor: "border-accent/30",
+    tools: ["Modelo de Kotter", "Modelo ADKAR", "Análisis de fuerzas", "Gestión del cambio"],
+    problem:
+      "Analizar el caso de Almacenes del Norte S.A., identificar qué falló en la implementación del sistema WMS y proponer un plan concreto de gestión del cambio para revertir la resistencia del personal.",
+    solution:
+      "Asumimos el rol de consultores de gestión del cambio: diagnosticamos las fuerzas internas y externas, analizamos las causas humanas de la resistencia y diseñamos un plan de acción escalonado basado en el modelo de 8 pasos de Kotter complementado con ADKAR.",
+    gestionCambio: {
+      actividad1: {
+        title: "Actividad 1 — Caso Almacenes del Norte S.A.",
+        contexto:
+          "Almacenes del Norte S.A. es una empresa familiar de 40 años dedicada a la distribución de consumo masivo. Cuenta con 250 empleados y tres centros de distribución. El 60% del personal operativo lleva más de 15 años en la compañía. Los procesos de inventario eran semi-manuales: planillas de papel, Excel y conteos físicos mensuales.",
+        diagnostico: {
+          title: "1. Diagnóstico del Cambio",
+          fuerzasExternas: [
+            {
+              titulo: "Ingreso de un nuevo competidor de e-commerce",
+              descripcion:
+                "Un gigante del comercio electrónico entró al mercado ofreciendo entregas en 24 horas a los mismos clientes de Almacenes del Norte, representando una amenaza directa a su posición competitiva y obligando a repensar su velocidad y eficiencia logística.",
+            },
+            {
+              titulo: "Exigencias de los clientes corporativos",
+              descripcion:
+                "Los clientes comenzaron a demandar una plataforma web para visualizar el stock en tiempo real y realizar pedidos automáticos. La tecnología dejó de ser una ventaja diferencial para convertirse en un requisito mínimo de permanencia.",
+            },
+          ],
+          fuerzasInternas: [
+            {
+              titulo: "Pérdidas crecientes por errores de inventario manual",
+              descripcion:
+                "En el último año, las pérdidas vinculadas a errores en el registro manual aumentaron un 15%. Este dato cuantificable evidenciaba que el sistema existente era ineficiente y económicamente insostenible a mediano plazo.",
+            },
+            {
+              titulo: "Cultura organizacional resistente al cambio digital",
+              descripcion:
+                "El supervisor asumía que la tecnología 'roba trabajos', los operarios evitaban los escáneres y los choferes rechazaban las tablets. Esto demuestra una cultura muy arraigada en sus métodos que no reconocía el valor real de la tecnología.",
+            },
+          ],
+          tipoCambio: {
+            pregunta: "¿El cambio fue planeado (proactivo) o no planeado (reactivo)?",
+            respuesta:
+              "El cambio fue predominantemente reactivo. Si bien existió una decisión formal del Directorio con aprobación de presupuesto y contratación de una consultora tecnológica, la naturaleza del cambio fue esencialmente una respuesta a presiones externas e internas ya instaladas: la empresa no anticipó la digitalización del mercado, sino que reaccionó cuando la amenaza competitiva y las pérdidas operativas ya eran evidentes y urgentes. La señal más clara fue el anuncio por correo electrónico avisando que en dos semanas el sistema antiguo dejaría de funcionar. No hubo diagnóstico cultural previo, ni participación de los empleados, ni período de transición.",
+            badge: "Reactivo",
+          },
+          velocidadCambio: {
+            pregunta: "¿El cambio fue brusco o evolutivo? ¿Cuál fue el impacto?",
+            respuesta:
+              "El cambio fue claramente brusco y abrupto. La empresa pasó de un sistema semi-manual con 40 años de historia a uno completamente digitalizado en dos semanas, sin preparación previa del personal.",
+            badge: "Brusco",
+            impactos: [
+              "La productividad cayó un 30% en el primer mes, generando retrasos en pedidos y quejas de clientes clave.",
+              "Se desencadenó una resistencia generalizada: rumores de despidos, sabotaje pasivo (escáneres sin cargar, cuadernos paralelos), negativa de los choferes a usar tablets.",
+              "Don Roberto, el referente informal más respetado, escaló el conflicto al sindicato.",
+              "Se generó un clima de desconfianza y estrés laboral.",
+            ],
+            conclusion:
+              "Un cambio de esta magnitud requería un proceso evolutivo de al menos 3 a 6 meses con etapas claras. La velocidad paralizó a la empresa en vez de ayudarla.",
+          },
+        },
+        resistencia: {
+          title: "2. Análisis de la Resistencia",
+          causasHumanas: [
+            {
+              titulo: "Miedo a la pérdida del trabajo",
+              descripcion:
+                "Cuando una empresa con 40 años de historia automatiza procesos manuales, el miedo al despido es una reacción comprensible. Nadie de la dirección desmintió ese rumor con claridad ni con garantías concretas.",
+            },
+            {
+              titulo: "Pérdida de identidad y valor percibido",
+              descripcion:
+                "El personal veterano construyó su valor profesional durante más de 15 años sobre el conocimiento empírico y la experiencia. El nuevo sistema, implícitamente, les decía que ese conocimiento ya no valía. Esto generó una herida en su identidad laboral.",
+            },
+            {
+              titulo: "Falta total de información y participación",
+              descripcion:
+                "Nadie les explicó el por qué del cambio, los beneficios para ellos, ni el futuro de sus puestos. Solo recibieron un correo masivo anunciando el fin del sistema en dos semanas. La ausencia de información genera incertidumbre, y la incertidumbre genera resistencia.",
+            },
+            {
+              titulo: "Incapacidad técnica percibida y real",
+              descripcion:
+                "Los operarios no habían recibido capacitación efectiva. Los choferes admitieron no saber usar las tablets. Introducir un sistema sin capacitación previa es un error grave que alimenta la narrativa de que 'el sistema no funciona'.",
+            },
+            {
+              titulo: "Ausencia de liderazgo contenedor",
+              descripcion:
+                "Don Roberto, al no ser incluido como agente de cambio, se convirtió en agente de resistencia. En organizaciones con cultura fuerte y personal antiguo, los líderes informales tienen más influencia que los jerárquicos. Ignorarlo fue un error estratégico grave.",
+            },
+          ],
+          erroresValeria: [
+            {
+              titulo: "Confundió implementación tecnológica con gestión del cambio",
+              descripcion:
+                "Instaló un nuevo sistema sin diseñar ningún proceso de gestión del cambio humano. Trató a las personas como variables técnicas, no como seres complejos que necesitan acompañamiento.",
+            },
+            {
+              titulo: "Comunicación unilateral, tardía e impersonal",
+              descripcion:
+                "Anunciar un cambio de esta magnitud mediante un correo masivo, sin reuniones previas ni espacios de escucha, fue un error crítico. La comunicación del cambio debe ser bidireccional, anticipada y personalizada según los grupos afectados.",
+            },
+            {
+              titulo: "Plazos imposibles e irrespetuosos",
+              descripcion:
+                "Dar dos semanas para abandonar un sistema de 40 años no es gestión del cambio, es imposición. No contempló el tiempo necesario para el aprendizaje, la adaptación emocional ni la transición operativa.",
+            },
+            {
+              titulo: "No involucró a los líderes informales",
+              descripcion:
+                "Don Roberto era el supervisor más antiguo y respetado. Debió haber sido el primer aliado del cambio, no el primer opositor.",
+            },
+            {
+              titulo: "No capacitó antes de implementar",
+              descripcion:
+                "El sistema se lanzó sin que los empleados supieran usarlo, lo que alimentó la narrativa de que 'el sistema no funciona' y generó caos operativo desde el primer día.",
+            },
+            {
+              titulo: "No gestionó los miedos ni las expectativas",
+              descripcion:
+                "No comunicó que no habría despidos, ni reconoció el valor del personal veterano. El nuevo sistema nunca fue explicado en términos que el personal operativo pudiera identificar como beneficios propios.",
+            },
+          ],
+        },
+        propuesta: {
+          title: "3. Propuesta de Solución — Plan de Acción",
+          acciones: [
+            {
+              fase: "Acciones inmediatas",
+              plazo: "Primeras 2 semanas",
+              badge: "Urgente",
+              items: [
+                "Pausar la implementación forzada: definir un período de transición donde ambos sistemas coexistan para reducir la presión y el caos operativo.",
+                "Reunión directa con Don Roberto: explicarle lo que realmente implica el cambio y el rol que ocuparán los operarios en la nueva organización.",
+                "Garantizar que no habrá despidos: comunicado oficial firmado por el Directorio con compromisos claros y verificables.",
+              ],
+            },
+            {
+              fase: "Acciones de mediano plazo",
+              plazo: "1 a 3 meses",
+              badge: "Mediano plazo",
+              items: [
+                "Programa de capacitación escalonado y práctico: talleres pequeños por grupos, con lenguaje accesible, donde los empleados practiquen con los dispositivos.",
+                "Crear agentes de cambio internos: identificar operarios jóvenes con disposición tecnológica y formarlos como multiplicadores dentro de sus grupos.",
+                "Espacios de escucha y feedback: reuniones periódicas donde el personal reporte problemas reales del sistema.",
+              ],
+            },
+            {
+              fase: "Acciones de largo plazo",
+              plazo: "3 a 6 meses",
+              badge: "Largo plazo",
+              items: [
+                "Definir KPIs para medir los beneficios del cambio: porcentaje de errores de inventario, satisfacción de clientes, tasa de adopción del sistema.",
+                "Realizar ajustes al sistema según el feedback de los usuarios: esto mejora el sistema técnicamente y fortalece el compromiso del personal al sentirse escuchados.",
+              ],
+            },
+          ],
+          modeloKotter: {
+            title: "Modelo de gestión del cambio aplicado",
+            descripcion:
+              "Consideramos que el modelo más adecuado para este caso es el Modelo de 8 Pasos de John Kotter, complementado con elementos del Modelo ADKAR.",
+            pasos: [
+              { numero: 1, titulo: "Crear sentido de urgencia", descripcion: "Mostrar al personal los datos reales (pérdidas de inventario, amenaza competitiva) para que comprendan por qué el cambio es necesario." },
+              { numero: 2, titulo: "Formar una coalición guía", descripcion: "Incluir a líderes formales e informales como Don Roberto como parte del equipo impulsor del cambio." },
+              { numero: 3, titulo: "Desarrollar una visión clara", descripcion: "Comunicar hacia dónde va la empresa y qué lugar tienen ellos en ese futuro." },
+              { numero: 4, titulo: "Comunicar la visión", descripcion: "De forma sostenida, en múltiples formatos y espacios, no en un solo correo masivo." },
+              { numero: 5, titulo: "Eliminar obstáculos", descripcion: "Resolver los problemas técnicos reales del sistema y capacitar adecuadamente." },
+              { numero: 6, titulo: "Generar victorias a corto plazo", descripcion: "Mostrar resultados parciales positivos para sostener la motivación del equipo." },
+              { numero: 7, titulo: "Consolidar mejoras", descripcion: "Ir ampliando el uso del sistema a medida que se consolida la adopción." },
+              { numero: 8, titulo: "Anclar el cambio en la cultura", descripcion: "Insertar el nuevo sistema WMS como un estándar en la organización." },
+            ],
+          },
+          estrategiaComunicacion: {
+            title: "Estrategia de comunicación y capacitación previa al lanzamiento",
+            fases: [
+              {
+                fase: "Fase 1",
+                titulo: "Comunicación inicial",
+                items: [
+                  "Reunión general con todos los empleados presentada por el Directorio, explicando las razones del cambio con datos concretos y honestos.",
+                  "Comunicación explícita y documentada de que no habrá despidos por la implementación.",
+                  "Presentación del cronograma de transición con período de convivencia entre sistemas.",
+                  "Apertura de canales de consulta y preguntas.",
+                ],
+              },
+              {
+                fase: "Fase 2",
+                titulo: "Involucramiento de líderes informales",
+                items: [
+                  "Reuniones específicas con Don Roberto y supervisores veteranos para escuchar sus preocupaciones e incorporar sus sugerencias.",
+                  "Designación oficial de 'embajadores del cambio' entre el personal, con reconocimiento visible.",
+                ],
+              },
+              {
+                fase: "Fase 3",
+                titulo: "Capacitación escalonada",
+                items: [
+                  "Talleres prácticos por grupos pequeños (máximo 10 personas), diferenciados por rol: operarios, choferes, supervisores.",
+                  "Instancias de práctica libre con los dispositivos antes de usarlos en producción.",
+                  "Manual simplificado en papel como soporte de transición.",
+                  "Evaluación del nivel de adopción antes de avanzar al siguiente grupo.",
+                ],
+              },
+              {
+                fase: "Fase 4",
+                titulo: "Lanzamiento progresivo",
+                items: [
+                  "Implementar el sistema primero en un solo centro de distribución como piloto.",
+                  "Evaluar resultados, ajustar problemas y sistematizar aprendizajes antes de replicar en los demás centros.",
+                ],
+              },
+            ],
+          },
+          transformacionDigital: {
+            pregunta: "¿El proyecto de Valeria es una transformación digital?",
+            respuesta: "Sí",
+            justificacion:
+              "El proyecto de Valeria constituye una transformación digital, aunque fue ejecutada de manera incompleta y deficiente en su dimensión humana y cultural. La transformación digital no se define únicamente por la incorporación de tecnología, sino por el cambio profundo en la forma en que una organización opera, genera valor y se relaciona con sus clientes a través de lo digital.",
+            criterios: [
+              "Cambio en los procesos centrales del negocio: el WMS transforma radicalmente el proceso de inventario, de semi-manual a automatizado en tiempo real.",
+              "Cambio en la cultura organizacional: implica pasar de una cultura basada en 'experiencia y memoria' a una basada en 'datos y tecnología'.",
+              "Cambio en la propuesta de valor al cliente: la plataforma web cambia la forma en que la empresa se relaciona con sus clientes corporativos.",
+              "Respuesta a disrupciones del entorno digital: impulsado directamente por la aparición de un competidor digital.",
+            ],
+            advertencia:
+              "Para que sea una transformación digital exitosa y completa, debe incluir también la dimensión humana y cultural. Una transformación digital que no transforma la cultura organizacional está condenada a fracasar operativamente.",
+          },
+        },
+      },
+      actividad2: {
+        title: "Actividad 2 — Para Reflexionar",
+        preguntas: [
+          {
+            id: "r1",
+            pregunta: "¿Por qué las personas suelen resistirse al cambio?",
+            respuesta:
+              "Las personas son seres de costumbres. El cambio es percibido frecuentemente como una amenaza al estado de comodidad y seguridad que construyeron a lo largo del tiempo. Todo cambio implica abandonar lo conocido y enfrentarse a una nueva realidad sobre la que no se tiene control ni certeza, lo que naturalmente genera miedo e incertidumbre.",
+          },
+          {
+            id: "r2",
+            pregunta: "¿Todos los cambios organizacionales son positivos?",
+            respuesta:
+              "No. Como quedó evidenciado en el caso de la Actividad 1, un cambio mal gestionado puede generar más problemas de los que resuelve. La positividad de un cambio debe evaluarse en múltiples dimensiones: resultados económicos, clima organizacional y bienestar del personal. Un cambio técnicamente correcto pero humanamente destructivo puede ser, en términos netos, negativo para la organización.",
+          },
+          {
+            id: "r3",
+            pregunta: "¿Qué ocurre cuando una organización no se adapta?",
+            respuesta:
+              "El entorno de toda organización es cambiante. Cuando una organización falla en adaptarse a las nuevas necesidades del mercado, deja progresivamente de ser útil y competitiva, lo que puede derivar en pérdidas económicas sostenidas e incluso en su desaparición.",
+          },
+          {
+            id: "r4",
+            pregunta: "¿La tecnología siempre mejora el trabajo?",
+            respuesta:
+              "La tecnología es una herramienta y, como tal, puede tanto potenciar como disrumpir el trabajo dependiendo del contexto. No toda operación se vuelve más eficiente al digitalizarse. La tecnología mejora el trabajo cuando responde a una necesidad real, cuando las personas están capacitadas para usarla y cuando su implementación contempla los procesos y la cultura organizacional existente.",
+          },
+          {
+            id: "r5",
+            pregunta: "¿Qué papel tiene el liderazgo en el cambio?",
+            respuesta:
+              "El liderazgo es el factor más determinante en el éxito o fracaso de cualquier proceso de cambio organizacional. Un líder competente no solo comunica la visión con claridad, sino que acompaña a las personas en el proceso, contiene la incertidumbre, escucha las resistencias y las transforma en insumos para mejorar. Sin líderes que cumplan ese rol de manera efectiva, ningún cambio sustancial puede sostenerse en el tiempo.",
+          },
+        ],
+      },
+    },
+    evidences: [],
+    reflection: {
+      learned:
+        "Aprendimos que la gestión del cambio no es un problema técnico sino humano. El caso de Almacenes del Norte demuestra que la mejor tecnología fracasa si no se gestiona el factor humano con la misma rigurosidad que los aspectos técnicos. Identificar a los líderes informales y convertirlos en aliados es tan importante como elegir el software correcto.",
+      difficulties:
+        "El mayor desafío fue distinguir entre las causas superficiales de la resistencia (los escáneres fallan, las tablets son difíciles) y las causas profundas (miedo al despido, pérdida de identidad laboral). Las primeras son síntomas; las segundas son el verdadero problema a resolver.",
+      improvements:
+        "Con más tiempo, profundizaríamos en el análisis comparativo de modelos de gestión del cambio (Lewin, McKinsey 7-S, Prosci) para argumentar con mayor precisión por qué Kotter + ADKAR es la combinación más adecuada para este caso específico.",
+      competencies: [
+        "Diagnóstico organizacional",
+        "Gestión del cambio",
+        "Análisis de resistencia",
+        "Pensamiento estratégico",
+        "Liderazgo",
+      ],
+    },
+  },
     {
     id: "d7",
     number: "D7",
