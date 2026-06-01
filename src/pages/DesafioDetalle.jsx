@@ -797,7 +797,173 @@ export default function DesafioDetalle() {
               )}
             </>
           )}
+          {/* Resolución individual — Zaira */}
+          {challenge.resolucionIndividual && (() => {
+            const ri = challenge.resolucionIndividual;
+            const branchColors = {
+              "ri-m1": "border-pink-300 bg-pink-50",
+              "ri-m2": "border-purple-300 bg-purple-50",
+              "ri-m3": "border-orange-300 bg-orange-50",
+              "ri-m4": "border-teal-300 bg-teal-50",
+              "ri-m5": "border-blue-300 bg-blue-50",
+              "ri-m6": "border-amber-300 bg-amber-50",
+            };
+            const badgeColors = {
+              "ri-m1": "bg-pink-100 text-pink-800",
+              "ri-m2": "bg-purple-100 text-purple-800",
+              "ri-m3": "bg-orange-100 text-orange-800",
+              "ri-m4": "bg-teal-100 text-teal-800",
+              "ri-m5": "bg-blue-100 text-blue-800",
+              "ri-m6": "bg-amber-100 text-amber-800",
+            };
+            const planColors = ["border-red-300", "border-yellow-300", "border-green-300"];
+            const planBadge = ["bg-red-100 text-red-700", "bg-yellow-100 text-yellow-800", "bg-green-100 text-green-800"];
 
+            return (
+              <>
+                {/* Header individual */}
+                <Section icon={Star} title={`Resolución individual — ${ri.alumna}`} delay={0.33}>
+                  <div className="rounded-xl border-2 border-accent/30 bg-blush-50 px-4 py-3 mb-3">
+                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">Escenario {ri.escenario.id}</p>
+                    <p className="text-base font-extrabold text-primary-900 mb-1">{ri.escenario.empresa}</p>
+                    <p className="text-sm text-primary-600">{ri.escenario.descripcion}</p>
+                  </div>
+                  <div className="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                    <p className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">Efecto — Cabeza del pescado</p>
+                    <p className="text-sm font-extrabold text-red-800">{ri.ishikawa.effect}</p>
+                  </div>
+                </Section>
+
+                {/* Ramas Ishikawa individual */}
+                <Section icon={BookOpen} title="Diagrama de Ishikawa — BurgerClick" delay={0.34}>
+                  <div className="space-y-3">
+                    {ri.ishikawa.branches.map((branch) => (
+                      <div key={branch.id} className={`rounded-xl border-l-4 p-4 ${branchColors[branch.id] ?? "border-primary-300 bg-primary-50"}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${badgeColors[branch.id] ?? "bg-primary-100 text-primary-800"}`}>
+                            {branch.name}
+                          </span>
+                          {branch.name === ri.ishikawa.criticalM.name && (
+                            <span className="text-xs font-bold text-red-500">★ M más crítica</span>
+                          )}
+                        </div>
+                        <ul className="space-y-1">
+                          {branch.causes.map((cause, i) => (
+                            <li key={i} className="text-sm text-primary-700 flex items-start gap-2">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0 opacity-40" />
+                              {cause}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    <div className="rounded-xl border border-purple-200 bg-purple-50 p-4">
+                      <p className="text-xs font-bold text-purple-500 uppercase tracking-widest mb-1">
+                        ★ M más crítica — {ri.ishikawa.criticalM.name}
+                      </p>
+                      <p className="text-sm text-primary-700 leading-relaxed">{ri.ishikawa.criticalM.justification}</p>
+                    </div>
+                  </div>
+                </Section>
+
+                {/* Plan de acción */}
+                <Section icon={Lightbulb} title="Plan de acción — atacando la M crítica" delay={0.35}>
+                  <div className="space-y-3">
+                    {ri.planAccion.map((paso, i) => (
+                      <div key={i} className={`rounded-xl border-l-4 p-4 bg-white/80 ${planColors[i] ?? "border-primary-300"}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <p className="text-sm font-extrabold text-primary-900">{paso.fase}</p>
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${planBadge[i] ?? "bg-primary-100 text-primary-700"}`}>
+                            {paso.plazo}
+                          </span>
+                        </div>
+                        <ul className="space-y-1">
+                          {paso.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-primary-700">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </Section>
+
+                {/* Comparación con LML */}
+                <Section icon={AlertCircle} title={`Comparación con ${ri.comparacion.equipoRef}`} delay={0.36}>
+                  <div className="overflow-x-auto mb-3">
+                    <table className="w-full text-sm border border-primary-200 rounded-lg overflow-hidden">
+                      <thead className="bg-primary-200/60">
+                        <tr>
+                          <th className="text-left p-2 text-primary-700 w-28">M</th>
+                          <th className="text-left p-2 text-primary-700">Comparación</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ri.comparacion.filas.map((fila, i) => (
+                          <tr key={i} className={i % 2 ? "bg-white" : "bg-primary-100/30"}>
+                            <td className="p-2 font-bold text-primary-800">{fila.m}</td>
+                            <td className="p-2 text-primary-700">{fila.texto}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-sm text-primary-600 leading-relaxed">{ri.comparacion.conclusion}</p>
+                </Section>
+
+                {/* TPI Zaira */}
+                <Section icon={BookOpen} title="Conexión con TPI — Perspectiva individual" delay={0.37}>
+                  <div className="space-y-4">
+                    {/* Cabeza del pescado */}
+                    <div className="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                      <p className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">Cabeza del pescado</p>
+                      <p className="text-sm font-bold text-red-800 mb-2">{ri.tpiZaira.cabezaPescado.problema}</p>
+                      <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 mb-2">
+                        {ri.tpiZaira.cabezaPescado.esProblemaOSintoma}
+                      </span>
+                      <ul className="space-y-1 mt-2">
+                        {ri.tpiZaira.cabezaPescado.evidencias.map((e, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-primary-700">
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0" />
+                            {e}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Mapeo 6M */}
+                    <div>
+                      <p className="text-xs font-bold text-primary-500 uppercase tracking-widest mb-2">Mapeo de las 6M en S&M</p>
+                      <div className="space-y-2">
+                        {ri.tpiZaira.mapeado6M.map((item, i) => (
+                          <div key={i} className="rounded-lg border-l-4 border-accent bg-white/80 p-3">
+                            <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">{item.m}</p>
+                            <p className="text-sm text-primary-700 leading-relaxed">{item.contenido}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Raíz y propuesta */}
+                    <div className="rounded-xl border border-purple-200 bg-purple-50 p-4">
+                      <p className="text-xs font-bold text-purple-500 uppercase tracking-widest mb-1">
+                        ★ M raíz — {ri.tpiZaira.raizYPropuesta.raiz}
+                      </p>
+                      <p className="text-sm text-primary-700 leading-relaxed mb-3">{ri.tpiZaira.raizYPropuesta.justificacion}</p>
+                      <div className="rounded-lg border border-green-200 bg-green-50 p-3">
+                        <p className="text-xs font-bold text-green-600 uppercase tracking-widest mb-1">
+                          ¿La propuesta ataca la raíz? {ri.tpiZaira.raizYPropuesta.atacaRaiz ? "✓ Sí" : "✗ No"}
+                        </p>
+                        <p className="text-sm text-primary-700 leading-relaxed">{ri.tpiZaira.raizYPropuesta.explicacion}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Section>
+              </>
+            );
+          })()}
 
           {/* Secciones específicas D4 */}
           {challenge.breakEven && (
