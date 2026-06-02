@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { team } from '../data/teamData';
 
 export default function Equipo() {
@@ -22,11 +23,11 @@ export default function Equipo() {
 
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full max-w-6xl mx-auto">
           {[
-            { nombre: "Denise Pujalte", desc: "Gestión y diseño", img: "/denisep.png" },
-            { nombre: "Denise Martinez", desc: "Gestión y planificación", img: "/denisem.png" },
-            { nombre: "Zaira Rosin", desc: "Análisis y diseño", img: "/zaira.png" },
-            { nombre: "Ian Nuñez", desc: "Planificación y análisis", img: "/ian.png" },
-            { nombre: "Amilcar Aguirre", desc: "Análisis estratégico", img: "/amilcar.png" },
+            { id: 3, nombre: "Denise Pujalte", desc: "Gestión y diseño", img: "/denisep.png" },
+            { id: 4, nombre: "Denise Martinez", desc: "Gestión y planificación", img: "/denisem.png" },
+            { id: 2, nombre: "Zaira Rosin", desc: "Análisis y diseño", img: "/zaira.png" },
+            { id: 1, nombre: "Ian Nuñez", desc: "Planificación y análisis", img: "/ian.png" },
+            { id: 5, nombre: "Amilcar Aguirre", desc: "Análisis estratégico", img: "/amilcar.png" },
           ].map((persona, index) => (
 
             <div key={index} className="group text-center">
@@ -34,13 +35,13 @@ export default function Equipo() {
               {/* NOMBRE ARRIBA */}
               <h2 className="font-semibold mb-2">{persona.nombre}</h2>
 
-              <div className="w-full aspect-square rounded-2xl overflow-hidden border-4 border-gray-300 group-hover:border-primary-500 transition-all duration-300">
+              <Link to={`/rpa/${persona.id}`} className="block relative aspect-square rounded-2xl overflow-hidden border-4 border-primary-200 group-hover:border-accent group-hover:shadow-glow transition-all duration-300">
                 <img
                   src={persona.img}
                   alt={persona.nombre}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
+              </Link>
 
               {/* DESCRIPCIÓN ABAJO (HOVER) */}
               <div className="h-8 mt-2">

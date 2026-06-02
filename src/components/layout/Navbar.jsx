@@ -63,7 +63,6 @@ const navLinks = [
       { label: 'Desafío 7', to: '/desafios/d7' },
     ],
   },
-  { label: 'RPA', to: '/rpa' },
   { label: 'Mapas', to: '/mapas' },
   { label: 'TPI', to: '/tpi' },
 ];
