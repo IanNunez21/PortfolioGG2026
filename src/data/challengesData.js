@@ -882,15 +882,162 @@ export const challenges = [
   {
     id: "d8",
     number: "D8",
-    title: "Próximamente",
-    summary: "Este desafío estará disponible próximamente.",
-    tools: [],
-    problem: "",
-    solution: "",
-    evidences: [],
+    title: "Devlights como Sistema Sociotécnico",
+    subtitle: "Gestión Gerencial · Desafío 8",
+    summary:
+      "Análisis de Devlights desde la perspectiva de sistemas sociotécnicos, sistemas de información y gestión del cambio frente a la disrupción de la IA.",
+    color: "from-accent to-warm",
+    colorBg: "bg-accent/10",
+    borderColor: "border-accent/30",
+    tools: ["Teoría General de Sistemas", "Sistemas de Información", "Gestión del Cambio", "Análisis organizacional"],
+    problem:
+      "Analizar a Devlights como sistema sociotécnico abierto, identificar sus factores críticos de éxito, las problemáticas que enfrenta y proponer aportes desde el rol de futuros profesionales.",
+    solution:
+      "Desarrollamos un análisis integral de Devlights considerando su estructura como sistema sociotécnico, sus sistemas de información desde la perspectiva de negocios, sus FCE, las problemáticas actuales y una síntesis integradora.",
+    devlights: {
+      actividades: [
+        {
+          id: "a1",
+          numero: "1",
+          titulo: "Devlights como sistema sociotécnico",
+          contenido:
+            "Devlights es una empresa argentina del sector tecnológico dedicada al desarrollo de software y consultoría informática. Desde la perspectiva de la Teoría General de Sistemas, puede considerarse un sistema sociotécnico, ya que su funcionamiento depende de la interacción entre componentes sociales y tecnológicos que trabajan de manera integrada para alcanzar objetivos organizacionales.",
+          subsecciones: [
+            {
+              titulo: "Componente social",
+              descripcion:
+                "Conformado por desarrolladores, analistas, diseñadores, líderes de proyecto, directivos y clientes. Estos actores colaboran, toman decisiones y aportan conocimientos especializados que permiten llevar adelante los distintos proyectos.",
+              color: "border-blue-400 bg-blue-50",
+              badgeColor: "bg-blue-100 text-blue-800",
+            },
+            {
+              titulo: "Componente técnico",
+              descripcion:
+                "Comprende las herramientas informáticas, plataformas de desarrollo, sistemas de gestión, servicios en la nube y metodologías ágiles utilizadas para diseñar e implementar soluciones tecnológicas.",
+              color: "border-teal-400 bg-teal-50",
+              badgeColor: "bg-teal-100 text-teal-800",
+            },
+            {
+              titulo: "Sistema abierto",
+              descripcion:
+                "Devlights mantiene una interacción constante con su entorno, recibiendo entradas como requerimientos de clientes, nuevas tecnologías y demandas del mercado, transformándolas en productos y servicios de valor. La retroalimentación de clientes y usuarios le permite mejorar continuamente sus procesos.",
+              color: "border-purple-400 bg-purple-50",
+              badgeColor: "bg-purple-100 text-purple-800",
+            },
+          ],
+        },
+        {
+          id: "a2",
+          numero: "2",
+          titulo: "Sistema de información desde la perspectiva de negocios",
+          contenido:
+            "Desde la perspectiva de negocios, Devlights utiliza los sistemas de información como una herramienta estratégica para gestionar proyectos, coordinar equipos y mantener la relación con sus clientes. Mediante plataformas de gestión, herramientas de colaboración y servicios en la nube, la empresa administra información clave para el desarrollo de software y la toma de decisiones.",
+          cierre:
+            "Estos sistemas permiten mejorar la eficiencia operativa, controlar el avance de los proyectos y ofrecer soluciones tecnológicas adaptadas a las necesidades del mercado. De esta manera, la información se convierte en un recurso fundamental para generar valor y mantener la competitividad de la organización.",
+          subsecciones: [],
+        },
+        {
+          id: "a3",
+          numero: "3",
+          titulo: "Características clave y Factores Críticos de Éxito (FCE)",
+          contenido:
+            "Devlights se destaca por ser una empresa tecnológica orientada al desarrollo de software a medida y la consultoría informática, trabajando con clientes tanto nacionales como internacionales. Una de sus principales características es su enfoque en la innovación, el aprendizaje continuo y el trabajo colaborativo mediante equipos multidisciplinarios. Además, impulsa la formación de talento a través de bootcamps y capacitaciones.",
+          fce: [
+            "Disponibilidad de personal altamente capacitado.",
+            "Actualización constante frente a los cambios tecnológicos.",
+            "Capacidad de adaptarse rápidamente a las necesidades de los clientes y del mercado.",
+            "Calidad de los servicios ofrecidos.",
+            "Uso de metodologías ágiles para garantizar la satisfacción del cliente.",
+          ],
+          subsecciones: [],
+        },
+        {
+          id: "a4",
+          numero: "4",
+          titulo: "Problemáticas y gestión del cambio",
+          contenido: "",
+          problematicas: [
+            {
+              titulo: "Disrupción por IA",
+              descripcion:
+                "Necesidad de controlar errores y alucinaciones en tareas críticas como migraciones de bases de datos.",
+              color: "border-red-400 bg-red-50",
+              badgeColor: "bg-red-100 text-red-800",
+            },
+            {
+              titulo: "Multiempleo e Infidelidad Laboral (Overemployment)",
+              descripcion:
+                "Casos de desarrolladores que usan la IA para cubrir de forma oculta dos o más trabajos en paralelo, afectando la ética y la seguridad.",
+              color: "border-orange-400 bg-orange-50",
+              badgeColor: "bg-orange-100 text-orange-800",
+            },
+            {
+              titulo: "Pérdida de Competitividad Cambiaria",
+              descripcion:
+                "Argentina se ha vuelto costosa en dólares, dificultando la competencia directa por precio contra mercados de bajo costo.",
+              color: "border-yellow-400 bg-yellow-50",
+              badgeColor: "bg-yellow-100 text-yellow-800",
+            },
+            {
+              titulo: "Supervisión del Rendimiento",
+              descripcion:
+                "Complejidad para medir la productividad y calidad del código en un entorno agéntico donde producir volumen es fácil.",
+              color: "border-pink-400 bg-pink-50",
+              badgeColor: "bg-pink-100 text-pink-800",
+            },
+          ],
+          gestionCambio:
+            "Devlights creó un área transversal que unifica Datos, Infraestructura y DevOps para estandarizar los procesos mediante templates bajo el enfoque Cloud-first. Esto automatiza el control de calidad arquitectónica y optimiza costos. Además, gestionan el cambio promoviendo la IA como una herramienta de inversión que potencia el ingenio del ingeniero, manteniendo una política de total transparencia con los clientes ante desvíos éticos.",
+          subsecciones: [],
+        },
+        {
+          id: "a5",
+          numero: "5",
+          titulo: "Propuesta desde el rol de futuros profesionales",
+          contenido: "",
+          aportes: [
+            "El aporte principal no es escribir código línea por línea, sino saber guiar las herramientas tecnológicas y entender el negocio del cliente.",
+            "Ser responsables y honestos: explicar claramente qué se necesita y qué no. Muchas veces los clientes piden IA solo por moda, y el trabajo del profesional es demostrar que un sistema de reglas simple puede resolver el problema de forma más barata y rápida.",
+            "Estructurar muy bien la información y dejar la documentación ordenada para que los asistentes de programación trabajen bien y no cometan errores graves.",
+            "Armar planes de trabajo claros, supervisar lo que hace la tecnología y no dejar todo automatizado a ciegas.",
+            "El mayor valor está en el lado humano: hablar un buen inglés, saber comunicarse con personas no técnicas usando pantallas de prueba o dibujos sencillos, y tener el compromiso de entregar un trabajo bien hecho.",
+          ],
+          subsecciones: [],
+        },
+        {
+          id: "a6",
+          numero: "6",
+          titulo: "Síntesis integradora",
+          contenido:
+            "Devlights es un sistema sociotécnico abierto que ha consolidado un modelo de exportación de software (staff augmentation) hacia EE. UU. basándose en la horizontalidad de su cultura, el talento regional y ventajas competitivas como el solapamiento horario y el inglés técnico. Frente a la crisis y disrupción de la IA agéntica, la empresa se reinventa estandarizando pipelines de desarrollo Cloud-first y potenciando el rol estratégico de sus ingenieros. El futuro profesional del área debe liderar esta transición, enfocándose en la arquitectura, la optimización de recursos y la comunicación asertiva, demostrando que la sostenibilidad tecnológica requiere un equilibrio entre la eficiencia automatizada y la confianza humana.",
+          subsecciones: [],
+        },
+      ],
+    },
+    evidences: [
+      {
+        id: "e1",
+        title: "Informe completo (Google Docs)",
+        type: "link",
+        description: "Documento completo de la actividad grupal sobre Devlights",
+        url: "https://docs.google.com/document/d/1K5dx6qX7JCBgV3hYkGZdamZNteZXm8Bg3HkihUHkEms/edit?tab=t.0",
+        icon: "link",
+      },
+    ],
     reflection: {
-      learned: "",
-      competencies: [],
+      learned:
+        "Aprendimos que una empresa tecnológica como Devlights no es solo código y servidores: es un sistema vivo donde las personas, los procesos y la tecnología se influyen mutuamente. El análisis como sistema sociotécnico nos permitió ver que los mayores desafíos no son técnicos sino humanos: la ética del overemployment, la confianza del cliente y la capacidad de adaptarse al cambio.",
+      difficulties:
+        "El mayor desafío fue sintetizar la charla en conceptos académicos sin perder la riqueza de lo que se compartió. Conectar la teoría de sistemas con una empresa real y actual requirió un esfuerzo de abstracción importante.",
+      improvements:
+        "Con más tiempo, profundizaríamos en el análisis comparativo con otras empresas del sector para identificar qué hace a Devlights diferente y qué podría replicarse en otras organizaciones tecnológicas argentinas.",
+      competencies: [
+        "Pensamiento sistémico",
+        "Análisis organizacional",
+        "Gestión del cambio",
+        "Visión estratégica",
+        "Comunicación técnica",
+      ],
     },
   },
 ];
