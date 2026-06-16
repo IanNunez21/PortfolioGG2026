@@ -728,6 +728,20 @@ export const challenges = [
       ],
     },
   },
+  {
+    id: "d8",
+    number: "D8",
+    title: "Próximamente",
+    summary: "Este desafío estará disponible próximamente.",
+    tools: [],
+    problem: "",
+    solution: "",
+    evidences: [],
+    reflection: {
+      learned: "",
+      competencies: [],
+    },
+  },
 ];
 
 // Helper para obtener un desafío por ID

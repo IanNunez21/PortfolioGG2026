@@ -263,6 +263,7 @@ export default function DesafioDetalle() {
     d5: { number: "D5", title: "Desafío en construcción" },
     d6: { number: "D6", title: "Desafío en construcción" },
     d7: { number: "D7", title: "Desafío en construcción" },
+    d8: { number: "D8", title: "Desafío en construcción" },
   };
   const comingSoon = comingSoonById[id];
 
