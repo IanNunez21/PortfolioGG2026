@@ -68,6 +68,7 @@ export const challenges = [
         "Con más tiempo, incorporaríamos internacionalización (i18n), modo oscuro/claro alternativo, y pruebas automatizadas con Vitest para garantizar la calidad del código.",
       competencies: ["React", "Diseño de Interfaz", "Arquitectura de Software", "Trabajo en Equipo"],
     },
+    
   },
   {
     id: "d4",
@@ -713,6 +714,156 @@ export const challenges = [
       },
     },
     evidences: [],
+    resolucionIndividual: {
+      alumna: "Zaira Antonella Rosin",
+      escenario: {
+        id: "D",
+        empresa: "Hamburguesería BurgerClick",
+        efecto: "Delivery frío y papas quemadas — caída de calificación de 4,8 a 3,2 estrellas",
+        descripcion:
+          "Disminución de la calidad del servicio de delivery, evidenciada por la entrega de alimentos fríos, aceitosos o mal cocidos, lo que provocó una caída de la calificación de los clientes de 4,8 a 3,2 estrellas.",
+      },
+      ishikawa: {
+        effect: "Delivery frío y papas quemadas",
+        criticalM: {
+          name: "Maquinaria",
+          justification:
+            "La freidora automática no calibrada es el origen técnico directo del problema. Su falla se amplifica porque no existe ningún método que la amortigüe: no hay control de ticket al retirar, no hay bolsa térmica, no hay protocolo de espera. Si la Maquinaria fallara con métodos robustos, el impacto sería contenido; si los Métodos fueran sólidos pero la freidora sigue sin calibrar, el problema persiste igual. La interacción entre ambas M crea un ciclo de refuerzo negativo: la cocina produce mal → el método de despacho no detecta el error → el repartidor retira igual → el cliente recibe mala calidad.",
+        },
+        branches: [
+          {
+            id: "ri-m1",
+            name: "Maquinaria",
+            causes: [
+              "Freidora sin calibrar.",
+              "No hay mantenimiento preventivo.",
+              "Falla con volumen alto de pedidos.",
+            ],
+          },
+          {
+            id: "ri-m2",
+            name: "Métodos",
+            causes: [
+              "No hay protocolo de control de calidad antes de despachar.",
+              "Sin control de ticket al retirar el pedido.",
+              "No existe gestión de tiempos máximos de espera.",
+            ],
+          },
+          {
+            id: "ri-m3",
+            name: "Mano de Obra",
+            causes: [
+              "Repartidor no controla ticket y cancela viaje por espera.",
+              "Cocineros sin protocolo de cocción.",
+            ],
+          },
+          {
+            id: "ri-m4",
+            name: "Materiales",
+            causes: [
+              "Bolsa de papel sin aislación térmica.",
+              "Papas/hamburguesa sin papel térmico durante la espera.",
+              "Mochila del repartidor no térmica.",
+            ],
+          },
+          {
+            id: "ri-m5",
+            name: "Medio Ambiente",
+            causes: [
+              "Sin área de espera para repartidores.",
+              "Mesa de despacho expuesta.",
+              "Flujo desordenado de retiro de pedidos.",
+            ],
+          },
+          {
+            id: "ri-m6",
+            name: "Medición",
+            causes: [
+              "Sin KPI de tiempo de entrega.",
+              "Sin registro de tiempos en mesa.",
+              "Sin trazabilidad por pedido.",
+            ],
+          },
+        ],
+      },
+      planAccion: [
+        {
+          fase: "Inmediato",
+          plazo: "Semana 1",
+          items: [
+            "Calibrar la freidora con el proveedor o técnico, establecer tiempos por volumen (pico vs normal).",
+            "Ninguna otra mejora tiene sentido hasta que el producto salga bien de la cocina.",
+          ],
+        },
+        {
+          fase: "Corto plazo",
+          plazo: "Semana 2",
+          items: [
+            "Implementar bolsas térmicas con compartimento separado para papas.",
+            "Instalar un punto de espera para repartidores con ticket de retiro obligatorio.",
+            "El repartidor solo puede retirar si el ticket coincide con el pedido en pantalla.",
+          ],
+        },
+        {
+          fase: "Seguimiento",
+          plazo: "Semana 3+",
+          items: [
+            "Registrar temperatura de entrega por pedido una semana después de la implementación.",
+            "Comparar calificaciones en app. Si las quejas de papas bajan, confirma que Maquinaria era la causa raíz.",
+          ],
+        },
+      ],
+      comparacion: {
+        equipoRef: "Equipo LML Gestión",
+        filas: [
+          { m: "Máquina", texto: "Similares. Ambas resoluciones consideran que la freidora es una causa importante del problema." },
+          { m: "Materiales", texto: "Similares. Ambas vinculan la pérdida de temperatura con deficiencias en el packaging." },
+          { m: "Mano de Obra", texto: "Similares. Ambos apuntan a errores humanos asociados al control y supervisión del proceso." },
+          { m: "Método", texto: "Similares, aunque LML pone más énfasis en los riesgos de automatizar sin controles." },
+          { m: "Medición", texto: "Similares. Ambos equipos encuentran falta de métricas para monitorear el desempeño." },
+          { m: "Medio Ambiente", texto: "Diferencia principal. Este análisis lo trata como causa relevante; LML lo considera la causa raíz más importante (gestión de espera de repartidores)." },
+        ],
+        conclusion:
+          "En ambas resoluciones se identificaron prácticamente las mismas causas dentro de las 6M. La principal diferencia aparece en la valoración de la importancia relativa: este análisis pone mayor énfasis en los problemas operativos y tecnológicos de la freidora, mientras que LML Gestión ubica el punto de apalancamiento sistémico en el Medio Ambiente.",
+      },
+      tpiZaira: {
+        cabezaPescado: {
+          problema:
+            "Ausencia de un sistema integrado de gestión de pedidos y administración en S&M Servicios y Materiales.",
+          esProblemaOSintoma: "Problema organizacional medible",
+          evidencias: [
+            "Los socios dedican 24 horas semanales a tareas administrativas manuales.",
+            "No existe trazabilidad del estado de cada pedido.",
+            "No se puede calcular la rentabilidad por línea de negocio.",
+          ],
+        },
+        mapeado6M: [
+          {
+            m: "Medición (Sistemas e Información)",
+            contenido:
+              "A S&M le faltan casi todos los KPIs básicos: tasa de conversión de consultas en pedidos, tiempo promedio entre consulta y presupuesto, rentabilidad por línea de negocio (a medida vs Camilo vs insumos) y porcentaje de cumplimiento de plazos. Estos datos existen implícitamente en los chats de WhatsApp y remitos, pero nadie los extrae ni analiza. El problema no se detecta temprano porque no hay un indicador que lo vuelva visible antes de que colapse por volumen.",
+          },
+          {
+            m: "Métodos (Procesos)",
+            contenido:
+              "Prácticamente todo el proceso de gestión de pedidos se hace de memoria: agenda de visitas domiciliarias, seguimiento de producción, control de stock de la línea Camilo. El único proceso con alguna formalización es la planilla Excel de presupuestación. Todo lo demás es tácito y no transferible.",
+          },
+          {
+            m: "Maquinaria (Software/Tecnología)",
+            contenido:
+              "Hay una brecha enorme entre el nivel tecnológico del área de diseño (AutoCAD, SketchUp, IA) y el de la administración (WhatsApp + Excel fragmentado). WhatsApp mezcla comunicación comercial con coordinación interna y no permite búsqueda estructurada ni estados de pedido. No genera trabas hoy porque el volumen es manejable, pero ante un incremento de demanda el sistema colapsa.",
+          },
+        ],
+        raizYPropuesta: {
+          raiz: "Métodos",
+          justificacion:
+            "Aunque la ausencia de tecnología es visible, el problema principal no es la falta de software. La empresa posee información, registros y herramientas tecnológicas para diseño, lo que no posee son procesos formalizados para gestionar esa información de manera integrada. Si instalaran un ERP sin modificar los procesos, seguirían dependiendo de los socios, registrando información de forma incompleta y manteniendo la misma resistencia al cambio.",
+          atacaRaiz: true,
+          explicacion:
+            "La propuesta sí ataca la raíz porque no consiste únicamente en incorporar tecnología. El sistema de información es la herramienta, pero el verdadero objetivo es transformar la forma en que la empresa administra sus procesos. Desde la perspectiva sistémica, la palanca de cambio no es el software en sí, sino la formalización y estandarización de los procesos organizacionales.",
+        },
+      },
+    },
     reflection: {
       learned:
         "Aprendimos que un diagrama de causa-efecto no sirve solo para listar problemas: lo más valioso es identificar cuál de las 6M actúa como causa raíz sistémica. En el caso de la aerolínea, los Políticas y Procedimientos amplifican todas las demás fallas. Al aplicarlo al TPI de S&M, confirmamos que la raíz está en la informalidad de los Métodos, y que implementar software sin antes documentar procesos sería una solución superficial.",

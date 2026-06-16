@@ -29,7 +29,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/equipo" element={<Equipo />} />
-          <Route path="/rpa" element={<Rpa />} />
+          <Route path="/rpa/:id" element={<Rpa />} />
           <Route path="/mapas" element={<Mapas />} />
           <Route path="/desafios" element={<Desafios />} />
           <Route path="/desafios/:id" element={<DesafioDetalle />} />

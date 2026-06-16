@@ -1,6 +1,5 @@
 // ============================================================
 // DATOS DE RUTAS PERSONALES DE APRENDIZAJE (RPA)
-// Editá este archivo para actualizar el progreso de cada integrante
 // ============================================================
 
 export const rpaData = [
@@ -32,6 +31,75 @@ export const rpaData = [
       { area: "Herramientas Digitales", value: 85 },
       { area: "Documentación", value: 90 },
     ],
+    units: [
+      {
+        number: 1,
+        title: "Unidad I: Las Organizaciones y su Administración",
+        reflection: "Todo sistema abierto se ve influenciado por factores externos. Ayuda a entender la diferencia exacta entre cumplir objetivos (eficacia) y optimizar los recursos técnicos y financieros para lograrlos (eficiencia). Además, prepara para operar bajo esquemas de gerencia plana, donde se valora la autosupervisión y la responsabilidad sobre el control jerárquico tradicional.",
+        acquiredConcepts: [
+          "Eficacia, eficiencia y efectividad",
+          "Empresa como sistema abierto",
+          "Gerencia plana y autosupervisión",
+          "Tercerización (Outsourcing)",
+          "Funciones gerenciales"
+        ]
+      },
+      {
+        number: 2,
+        title: "Unidad II: Estrategia Empresarial",
+        reflection: "La estrategia es la hoja de ruta para que los desarrollos técnicos generen un valor diferenciador y sostenible en el mercado. Te da las herramientas analíticas para diagnosticar la situación de una empresa y traducir los objetivos del negocio en métricas e indicadores de rendimiento específicos (KPIs). Es la base para alinear los sistemas de información con la toma de decisiones y liderar la transformación digital.",
+        acquiredConcepts: [
+          "Ventaja competitiva",
+          "Análisis FODA y Matriz CAME",
+          "Análisis PESTEL",
+          "Objetivos estratégicos y KPIs (Modelo SMART)",
+          "Cuadro de Mando Integral / Balanced Scorecard"
+        ]
+      },
+      {
+        number: 3,
+        title: "Unidad III: La Conducta Humana en la Organización",
+        reflection: "Te demuestra que el éxito de la transformación digital e Industria 4.0 no depende de las máquinas, sino de las personas. Te sirve para adoptar el perfil de \"Talento 4.0\", combinando las habilidades técnicas con pensamiento crítico, adaptabilidad y metodologías ágiles. Como líder o colaborador, te enseña a trabajar por metas en entornos virtuales descentralizados basados en la confianza y la autonomía.",
+        acquiredConcepts: [
+          "Smart Working y Teletrabajo",
+          "Talento 4.0 e Integración STEAM",
+          "Feedback integral (Evaluación 360°)",
+          "People Analytics"
+        ]
+      },
+      {
+        number: 4,
+        title: "Unidad IV: Modelos de Negocios",
+        reflection: "Evita que uno cometa el error clásico de ingeniería: desarrollar un software o producto excelente que nadie quiere comprar. Obliga a definir primero una propuesta de valor clara que resuelva un problema real del cliente. El Canvas te da la estructura lógica para entender rápidamente cómo se interconectan la tecnología, los costos, los canales y los ingresos para hacer viable un proyecto.",
+        acquiredConcepts: [
+          "Propuesta de valor",
+          "Modelo de negocio Canvas"
+        ]
+      },
+      {
+        number: 5,
+        title: "Unidad V: Dinámica del Cambio",
+        reflection: "Esta unidad te enseña que el cambio no es un evento aislado, sino una constante que debés gestionar de manera planificada y proactiva para que la organización no quede obsoleta. Como profesional de TI, te sirve para entender que implementar un nuevo software o migrar una infraestructura va a fracasar si no gestionás la resistencia humana y el impacto emocional del equipo involucrado. Te da el criterio para saber cuándo aplicar una mejora gradual sobre lo que ya existe y cuándo ejecutar una reingeniería radical para rediseñar un proceso desde la raíz y automatizarlo eficientemente en un entorno de transformación digital.",
+        acquiredConcepts: [
+          "Cambio Organizacional (Evolutivo vs. Brusco)",
+          "Resistencia al cambio",
+          "Cambio planeado (Proactivo) y reactivo",
+          "Reingeniería de Procesos (BPR) vs. Mejora Continua"
+        ]
+      },
+      {
+        number: 6,
+        title: "Unidad VI: Innovación",
+        reflection: "Te da el criterio para diferenciar una simple idea o invención de una innovación real que genera valor económico y social adoptado por el mercado. Te sirve para evaluar proyectos bajo la triple frontera del éxito: que la tecnología sea factible, que el humano la desee y que el negocio sea viable.",
+        acquiredConcepts: [
+          "Factores de la Innovación (Deseabilidad, Factibilidad, Viabilidad)",
+          "Innovación Radical (Disruptiva) e Incremental",
+          "Innovación Abierta",
+          "Empresas de Base Tecnológica (EBT) y Valle de la Muerte",
+          "Vigilancia Tecnológica e Inteligencia Competitiva"
+        ]
+      }
+    ]
   },
   {
     id: 2,
