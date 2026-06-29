@@ -23,7 +23,7 @@ export const challenges = [
       description: "El micrositio está organizado en una estructura de carpetas clara y escalable:",
       structure: [
         { path: "src/", description: "Raíz del código fuente" },
-        { path: "src/pages/", description: "Una página por ruta: Home, Equipo, Actividades, Rpa, Mapas, Desafios, Tpi" },
+        { path: "src/pages/", description: "Una página por ruta: Home, Equipo, Actividades, Rpa, Mapa, Desafios, Tpi" },
         { path: "src/components/", description: "Componentes reutilizables organizados por tipo (layout, sections, ui)" },
         { path: "src/data/", description: "Archivos de datos: teamData.js y challengesData.js" },
         { path: "src/assets/", description: "Imágenes y recursos estáticos" },
@@ -35,7 +35,7 @@ export const challenges = [
         { path: "/actividades/investigacion-gerencia", label: "Investigación — La Gerencia" },
         { path: "/actividades/tests-liderazgo", label: "Perfiles de Liderazgo" },
         { path: "/rpa", label: "RPA" },
-        { path: "/mapas", label: "Mapas Conceptuales" },
+        { path: "/mapa", label: "Mapa Conceptual" },
         { path: "/desafios", label: "Desafíos" },
         { path: "/desafios/:id", label: "Detalle de cada Desafío" },
         { path: "/tpi", label: "TPI" },

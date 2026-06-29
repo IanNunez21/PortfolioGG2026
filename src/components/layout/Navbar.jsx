@@ -63,8 +63,9 @@ const navLinks = [
       { label: 'Desafío 7', to: '/desafios/d7' },
     ],
   },
-  { label: 'Mapas', to: '/mapas' },
+  { label: 'Mapa', to: '/mapa' },
   { label: 'TPI', to: '/tpi' },
+  { label: 'RPA', to: '/rpa' },
 ];
 
 export default function Navbar() {
