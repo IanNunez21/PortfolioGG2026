@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Equipo from './pages/Equipo';
 import Rpa from './pages/Rpa';
-import Mapas from './pages/Mapas';
+import RpaList from './pages/RpaList';
+import Mapa from './pages/Mapa';
 import Desafios from './pages/Desafios';
 import DesafioDetalle from './pages/DesafioDetalle';
 import Tpi from './pages/Tpi';
@@ -29,8 +30,9 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/equipo" element={<Equipo />} />
+          <Route path="/rpa" element={<RpaList />} />
           <Route path="/rpa/:id" element={<Rpa />} />
-          <Route path="/mapas" element={<Mapas />} />
+          <Route path="/mapa" element={<Mapa />} />
           <Route path="/desafios" element={<Desafios />} />
           <Route path="/desafios/:id" element={<DesafioDetalle />} />
           <Route path="/tpi" element={<Tpi />} />

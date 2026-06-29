@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { team } from '../data/teamData';
 
 export default function Equipo() {
@@ -35,13 +34,13 @@ export default function Equipo() {
               {/* NOMBRE ARRIBA */}
               <h2 className="font-semibold mb-2">{persona.nombre}</h2>
 
-              <Link to={`/rpa/${persona.id}`} className="block relative aspect-square rounded-2xl overflow-hidden border-4 border-primary-200 group-hover:border-accent group-hover:shadow-glow transition-all duration-300">
+              <div className="block relative aspect-square rounded-2xl overflow-hidden border-4 border-primary-200 group-hover:border-accent group-hover:shadow-glow transition-all duration-300">
                 <img
                   src={persona.img}
                   alt={persona.nombre}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </Link>
+              </div>
 
               {/* DESCRIPCIÓN ABAJO (HOVER) */}
               <div className="h-8 mt-2">
