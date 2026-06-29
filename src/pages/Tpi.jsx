@@ -1,9 +1,35 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FileText, ExternalLink, Image as ImageIcon } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FileText, ExternalLink, Image as ImageIcon, ZoomIn, ZoomOut, RotateCcw, Maximize2, X } from 'lucide-react';
 
 export default function Tpi() {
   const [imgError, setImgError] = useState(false);
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [zoomScale, setZoomScale] = useState(1);
+
+  // Close lightbox on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setShowLightbox(false);
+        setZoomScale(1);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const handleZoomIn = () => {
+    setZoomScale((prev) => Math.min(prev + 0.25, 3));
+  };
+
+  const handleZoomOut = () => {
+    setZoomScale((prev) => Math.max(prev - 0.25, 1));
+  };
+
+  const handleResetZoom = () => {
+    setZoomScale(1);
+  };
 
   return (
     <div className="min-h-[calc(100dvh-5rem)] pt-6 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -26,7 +52,7 @@ export default function Tpi() {
           
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-12 h-1 bg-accent/30 rounded-full"></div>
-            <div className="w-3 h-3 rounded-full bg-gradient-to-tr from-accent to-warm"></div>
+            <div className="w-3 h-3 rounded-full bg-gradient-to-tr from-accent to-warm animate-pulse"></div>
             <div className="w-12 h-1 bg-warm/30 rounded-full"></div>
           </div>
 
@@ -53,18 +79,29 @@ export default function Tpi() {
               {/* Infographic Image / Fallback Container */}
               <div className="flex-1 rounded-2xl overflow-hidden border border-primary-100 bg-primary-50 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] flex items-center justify-center min-h-[300px]">
                 {!imgError ? (
-                  <img
-                    src="/tpi-infografia.png"
-                    alt="Infografía del Trabajo Práctico Integrador"
-                    className="w-full h-full object-contain"
-                    onError={() => setImgError(true)}
-                  />
+                  <div className="relative w-full h-full group/image flex items-center justify-center">
+                    <img
+                      src="/tpi-infografia.png"
+                      alt="Infografía del Trabajo Práctico Integrador"
+                      className="w-full h-full object-contain"
+                      onError={() => setImgError(true)}
+                    />
+                    
+                    {/* Fullscreen Trigger Button */}
+                    <button
+                      onClick={() => setShowLightbox(true)}
+                      className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-citrus hover:bg-citrus-dark text-primary-950 flex items-center justify-center shadow-md hover:scale-105 transition-all duration-200 border border-primary-950/10 cursor-pointer z-10"
+                      title="Ver en pantalla completa y hacer zoom"
+                    >
+                      <Maximize2 className="w-5 h-5" />
+                    </button>
+                  </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-primary-50 to-primary-100/50 w-full h-full">
                     <div className="w-16 h-16 rounded-full bg-blush-100 flex items-center justify-center mb-4 text-accent border border-accent/10">
                       <ImageIcon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-lg font-bold text-primary-800 mb-2">Infografía del TPI</h3>
+                    <h3 className="text-lg font-bold text-primary-850 mb-2">Infografía del TPI</h3>
                     <p className="text-primary-500 text-sm max-w-sm">
                       Visualización del diagnóstico y propuesta de mejora para S&M Servicios y Materiales.
                     </p>
@@ -118,6 +155,91 @@ export default function Tpi() {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox con Zoom Interactivo y Controles Flotantes (Sin banner superior) */}
+      <AnimatePresence>
+        {showLightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 overflow-hidden flex items-center justify-center"
+            onClick={() => {
+              setShowLightbox(false);
+              setZoomScale(1);
+            }}
+          >
+            {/* Close Button - Floating absolute on top-right */}
+            <button
+              onClick={() => {
+                setShowLightbox(false);
+                setZoomScale(1);
+              }}
+              className="absolute top-6 right-6 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-red-500 text-white flex items-center justify-center transition-colors cursor-pointer border border-white/10 shadow-md active:scale-95"
+              title="Cerrar (Esc)"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Zoom Controls Pad - Floating absolute on bottom-center */}
+            <div 
+              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/60 border border-white/10 backdrop-blur-md rounded-2xl p-2.5 flex items-center gap-3.5 shadow-xl text-white"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Zoom out button */}
+              <button
+                onClick={handleZoomOut}
+                disabled={zoomScale <= 1}
+                className="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 text-white flex items-center justify-center disabled:opacity-30 transition-all cursor-pointer active:scale-90"
+                title="Alejar"
+              >
+                <ZoomOut className="w-4.5 h-4.5" />
+              </button>
+              
+              <span className="text-sm font-extrabold tracking-wide min-w-[70px] text-center select-none">
+                {Math.round(zoomScale * 100)}%
+              </span>
+              
+              {/* Reset zoom button */}
+              <button
+                onClick={handleResetZoom}
+                disabled={zoomScale === 1}
+                className="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 text-white flex items-center justify-center disabled:opacity-30 transition-all cursor-pointer active:scale-90"
+                title="Restablecer"
+              >
+                <RotateCcw className="w-4.5 h-4.5" />
+              </button>
+              
+              {/* Zoom in button */}
+              <button
+                onClick={handleZoomIn}
+                disabled={zoomScale >= 3}
+                className="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 text-white flex items-center justify-center disabled:opacity-30 transition-all cursor-pointer active:scale-90"
+                title="Acercar"
+              >
+                <ZoomIn className="w-4.5 h-4.5" />
+              </button>
+            </div>
+
+            {/* Lightbox Content Area */}
+            <div className="w-full h-full overflow-auto flex p-4">
+              <img
+                src="/tpi-infografia.png"
+                alt="Infografía del Trabajo Práctico Integrador ampliada"
+                className="rounded-lg shadow-2xl select-none transition-all duration-200 ease-out"
+                style={{
+                  width: 'auto',
+                  height: 'auto',
+                  maxWidth: `${100 * zoomScale}%`,
+                  maxHeight: `${85 * zoomScale}vh`,
+                  margin: 'auto'
+                }}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
