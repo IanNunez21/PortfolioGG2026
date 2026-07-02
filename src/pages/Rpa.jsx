@@ -1580,6 +1580,396 @@ function RpaMartinez({ member }) {
     </div>
   );
 }
+//Contenido completo del RPA de Amicar
+const amicarRpaContent = {
+  units: [
+    {
+      number: 1,
+      bloque: "Bloque 1: Fundamentos de la Administración y Estructura Organizacional",
+      title: "UNIDAD I: Las Organizaciones y su Administración",
+      qa: [
+        {
+          globalNumber: 1,
+          q: "¿De qué manera debe el ingeniero en sistemas diseñar la arquitectura de este sistema para asegurar su homeostasis y equifinalidad, permitiendo que la empresa alcance sus objetivos por diversos caminos técnicos sin que la estructura se vuelva rígida o caiga en la entropía?",
+          a: "Para asegurar la homeostasis y la equifinalidad, el ingeniero en sistemas debe implementar mecanismos de retroalimentación (feedback), promover estructuras descentralizadas y flexibles, y garantizar una gestión eficiente de la información que facilite la toma de decisiones y reduzca la entropía organizacional."
+        },
+        {
+          globalNumber: 2,
+          q: "Si las organizaciones fallan no por las personas individualmente sino por deficiencias en su diseño (roles difusos, mala comunicación), ¿cómo puede el pensamiento sistémico ayudar a un profesional de sistemas a diagnosticar si un problema operativo es un error técnico o una falla en la \"arquitectura de relaciones\" de la empresa?",
+          a: "El pensamiento sistémico permite ver el problema como resultado de la interacción entre partes, no de un componente aislado. Antes de asumir que es un error técnico, el profesional debe mapear cómo se relacionan roles, comunicación y normas: muchas veces la \"falla técnica\" es en realidad un síntoma de una estructura de relaciones mal diseñada."
+        }
+      ]
+    },
+    {
+      number: 2,
+      bloque: "Bloque 2: Estrategia Empresarial y Planificación",
+      title: "UNIDAD II: Estrategia Empresarial y Diagnóstico",
+      qa: [
+        {
+          globalNumber: 3,
+          q: "Teniendo en cuenta que el pensamiento estratégico requiere una \"visión a largo plazo\" y un análisis profundo de tendencias, ¿cómo debe el ingeniero en sistemas integrar la vigilancia tecnológica en el ciclo continuo de \"Análisis-Decisión-Implantación\" para transformar las señales débiles del entorno en una ventaja competitiva sostenible y evitar que la organización caiga en un cambio meramente reactivo de \"apagar incendios\"?",
+          a: "La vigilancia tecnológica convierte al sistema de información en un sensor del entorno: capta señales débiles (cambios de mercado, tecnología emergente) antes de que se vuelvan crisis. Integrada al ciclo Análisis-Decisión-Implantación, permite decidir con anticipación en vez de reaccionar sobre problemas ya consumados."
+        },
+        {
+          globalNumber: 4,
+          q: "Bajo la premisa de que \"todos los KPIs son métricas, pero no todas las métricas son estratégicas\", ¿cuál es el proceso crítico que debe seguir un profesional de sistemas para transformar datos técnicos puros en indicadores de desempeño que realmente alimenten la \"perspectiva de aprendizaje y crecimiento\" del Cuadro de Mando Integral?",
+          a: "El proceso crítico es filtrar: no todo dato medible importa, solo el que está atado a un objetivo estratégico. Esto exige que el profesional dialogue con el negocio para traducir métricas técnicas (uptime, performance) en indicadores que muestren aprendizaje y crecimiento organizacional, no solo funcionamiento del sistema."
+        }
+      ]
+    },
+    {
+      number: 3,
+      bloque: "Bloque 3: La Conducta Humana y Gestión del Talento 4.0",
+      title: "UNIDAD III: La Conducta Humana y el Talento 4.0",
+      qa: [
+        {
+          globalNumber: 5,
+          q: "La Gestión del Talento 4.0 propone ver a las personas como seres proactivos e inteligentes impulsados por la libertad. ¿De qué forma la aplicación de los \"9 roles de Belbin\" permite que un líder de sistemas coordine equipos técnicos donde la diversidad de personalidades no sea un foco de conflicto, sino la base de la sinergia organizacional?",
+          a: "Los roles de Belbin permiten anticipar cómo se va a comportar cada perfil dentro del equipo técnico. Un líder que los conoce arma equipos complementarios a propósito, así la diversidad de personalidades deja de ser un riesgo de choque y pasa a ser una fuente de cobertura de debilidades mutuas."
+        },
+        {
+          globalNumber: 6,
+          q: "La gestión del talento no es un gasto sino una inversión estratégica. ¿De qué forma el desarrollo de \"habilidades conceptuales\" en los niveles gerenciales permite que un líder técnico gestione no solo software, sino también el clima emocional y la motivación necesarios para reducir la rotación de talento clave?",
+          a: "Las habilidades conceptuales le permiten al líder ver más allá del código: entender cómo la carga de trabajo, el reconocimiento y el clima afectan la motivación. Gestionar eso activamente reduce la rotación, porque el talento clave no se va solo por sueldo, sino por cómo se siente tratado."
+        }
+      ]
+    },
+    {
+      number: 4,
+      bloque: "Bloque 4: Modelado de Negocios y Captación de Valor",
+      title: "UNIDAD IV: Modelos de Negocios",
+      qa: [
+        {
+          globalNumber: 7,
+          q: "El modelo de negocio moderno se centra en definir \"qué ofrecer al mercado\" y por qué este aceptará la propuesta de valor. ¿Cómo impacta la elección de un modelo de negocio en las decisiones de infraestructura tecnológica que debe tomar un ingeniero para asegurar que el valor se capture y entregue eficientemente?",
+          a: "El modelo de negocio define qué se promete al cliente, y eso condiciona directamente la arquitectura: no es lo mismo diseñar infraestructura para un servicio de alta disponibilidad que para uno de bajo costo. La tecnología deja de ser una elección neutral y pasa a ser parte de cómo se cumple la propuesta de valor."
+        },
+        {
+          globalNumber: 8,
+          q: "El lienzo Canvas permite una visión global e integrada del negocio. ¿En qué medida el análisis de los \"recursos clave\" y \"actividades clave\" ayuda al profesional de sistemas a priorizar desarrollos técnicos que realmente potencien la ventaja competitiva en lugar de solo automatizar procesos existentes?",
+          a: "Mirar recursos y actividades clave del CANVAS evita desarrollar funcionalidades \"porque se puede\", y obliga a priorizar lo que realmente sostiene la ventaja competitiva. Así el desarrollo técnico deja de perseguir la automatización por sí misma y empieza a perseguir el diferencial del negocio."
+        }
+      ]
+    },
+    {
+      number: 5,
+      bloque: "Bloque 5: Gestión del Cambio y Transformación Digital",
+      title: "UNIDAD V: Dinámica del Cambio y Transformación Digital",
+      qa: [
+        {
+          globalNumber: 9,
+          q: "La transformación digital implica cambiar la manera en que la organización funciona y genera valor, no solo usar computadoras. ¿Cuál es la responsabilidad ética y profesional del ingeniero en sistemas al gestionar la resistencia cultural que surge cuando la tecnología obliga a abandonar prácticas laborales arraigadas?",
+          a: "La responsabilidad del ingeniero no termina en implementar la herramienta: incluye anticipar el impacto humano del cambio y acompañarlo con comunicación y capacitación. Ignorar la resistencia cultural, aunque la solución técnica sea perfecta, suele hacer fracasar el proyecto igual."
+        },
+        {
+          globalNumber: 10,
+          q: "En un contexto VUCA (volátil, incierto, complejo y ambiguo), la adaptación es una estrategia fundamental. ¿Cómo debe evolucionar el rol del \"gerente de sistemas\" para pasar de ser un proveedor de soporte a ser un agente activo de la gestión del cambio que facilite la resiliencia organizacional?",
+          a: "En un entorno VUCA el gerente de sistemas deja de esperar pedidos y pasa a proponer soluciones antes de que el problema escale. Ese cambio de rol —de soporte reactivo a agente de cambio— es lo que le da a la organización capacidad de adaptarse rápido en vez de quedar rezagada."
+        }
+      ]
+    },
+    {
+      number: 6,
+      bloque: "Bloque 6: Ecosistemas de Innovación y Startups",
+      title: "UNIDAD VI: Ecosistemas de Innovación y Startups",
+      qa: [
+        {
+          globalNumber: 11,
+          q: "La innovación abierta surge de la sinergia de esfuerzos dispersos de muchos individuos de distintas agrupaciones. ¿Cómo puede una empresa tradicional utilizar la vigilancia tecnológica y la inteligencia competitiva para integrarse en un ecosistema de startups sin comprometer su seguridad de información?",
+          a: "La vigilancia tecnológica ayuda a identificar con qué startups conviene aliarse sin exponer información sensible; la clave es abrir colaboración en las capas donde hay valor compartido (ideas, tendencias) y proteger las capas donde hay datos críticos propios."
+        },
+        {
+          globalNumber: 12,
+          q: "Si la innovación nace del conocimiento y la colaboración gestionables desde el talento humano, ¿qué mecanismos de \"laboratorios de innovación\" o espacios de co-creación debería proponer un ingeniero para que las ideas disruptivas se conviertan en modelos de negocio escalables?",
+          a: "Los laboratorios de innovación o espacios de co-creación le dan un canal formal a las ideas que, de otro modo, quedarían sueltas. El rol del ingeniero ahí es dar viabilidad técnica a esas ideas para que puedan pasar de ocurrencia a modelo de negocio probado."
+        }
+      ]
+    },
+    {
+      number: 7,
+      bloque: "Bloque 7: Responsabilidad Social Empresaria (RSE) y Universitaria (RSU)",
+      title: "UNIDAD VII: Responsabilidad Social Empresaria y Universitaria",
+      qa: [
+        {
+          globalNumber: 13,
+          q: "La RSE implica extender principios éticos a toda la cadena de suministro. ¿De qué manera la selección de software o hardware bajo criterios de sostenibilidad ambiental redefine el concepto de \"calidad\" en un proyecto de ingeniería de sistemas?",
+          a: "Elegir hardware o software bajo criterios de sostenibilidad amplía el concepto de calidad: ya no alcanza con que funcione bien, también importa su huella ambiental y su cadena de producción. Eso convierte una decisión técnica en una decisión ética."
+        },
+        {
+          globalNumber: 14,
+          q: "Más allá de la rentabilidad económica, la RSE busca mejorar las condiciones de vida de las comunidades. ¿Cómo puede un profesional de sistemas integrar la responsabilidad social en el diseño de algoritmos que garanticen la inclusión y la protección de datos sensibles?",
+          a: "El profesional puede integrar RSE diseñando algoritmos que no discriminen ni exploten datos sensibles sin necesidad, y que sean auditables. La inclusión y la protección de datos dejan de ser un checkbox legal y pasan a ser parte del diseño desde el principio."
+        }
+      ]
+    }
+  ],
+  sintesis: {
+    formulacion: "La elaboración de esta Ruta Personal de Aprendizaje partió de identificar, en cada uno de los siete bloques temáticos de la materia, una tensión o vacío que pudiera formularse como pregunta abierta y no meramente descriptiva, vinculando siempre los contenidos de gestión organizacional con las incumbencias propias de la Ingeniería en Sistemas. Cada pregunta se respondió aplicando una mirada sistémica, buscando que la solución técnica propuesta dialogara con la estructura, la cultura y las personas de la organización.",
+    habits: [
+      {
+        title: "Cambia de perspectivas para aumentar la comprensión (Changes perspectives to increase understanding)",
+        desc: "Se trabajó al construir el Diagrama de Ishikawa para analizar un problema organizacional, donde fue necesario abordar el mismo escenario desde distintas categorías de causas (personas, procesos, tecnología, entorno) en lugar de quedarse con una sola mirada. Cambiar de perspectiva entre categorías permitió detectar causas que desde un solo ángulo hubieran pasado desapercibidas, enriqueciendo el diagnóstico del problema."
+      },
+      {
+        title: "Encuentra dónde emergen consecuencias no intencionadas (Finds where unintended consequences emerge)",
+        desc: "Se evidenció en el desafío de \"La Torre de Papel\", donde decisiones tomadas al inicio (repartir mal los roles, apurar la construcción, no coordinar tiempos) generaron efectos que el equipo no había anticipado sobre la estabilidad y altura final de la torre. El ejercicio mostró que en un sistema las acciones tempranas tienen efectos que se manifiestan más adelante y no siempre de forma evidente."
+      },
+      {
+        title: "Busca comprender el panorama general (Seeks to understand the big picture)",
+        desc: "Trabajado al modelar negocios con la metodología CANVAS, donde hubo que completar los nueve bloques de forma integrada en lugar de analizar cada parte del negocio por separado. Ver el negocio como un todo interconectado evitó decisiones aisladas que podrían optimizar una parte pero perjudicar al conjunto."
+      },
+      {
+        title: "Considera cómo los modelos mentales afectan la realidad actual y futura (Considers how mental models affect current reality and future)",
+        desc: "Se puso en práctica en la entrevista con el gerente de la compañía \"Devlights\", donde se hicieron preguntas para confirmar supuestos y creencias sobre cómo funciona el negocio. La entrevista mostró que los modelos mentales de quienes lideran una organización moldean su realidad presente y condicionan hacia dónde puede evolucionar."
+      }
+    ]
+  },
+  conclusion: "Esta ruta me ayudó a integrar temas que había visto sueltos (estrategia, talento, transformación digital, RSE) bajo una misma idea: el ingeniero en sistemas no solo construye soluciones técnicas, sino que entiende la organización como un sistema donde estructura, personas y tecnología se condicionan entre sí. Como pendiente, me queda seguir practicando cómo formular preguntas realmente abiertas."
+};
+function RpaAmicar({ member }) {
+  const [activeTab, setActiveTab] = useState('preguntas');
+  const [activeUnit, setActiveUnit] = useState(1);
+
+  return (
+    <div className="space-y-8">
+      <div className="flex flex-wrap gap-2.5 border-b border-primary-200 pb-3">
+        <button
+          onClick={() => setActiveTab('preguntas')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'preguntas'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <BookOpen className="w-4 h-4" />
+          Preguntas por Unidad
+        </button>
+        <button
+          onClick={() => setActiveTab('sintesis')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'sintesis'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <Brain className="w-4 h-4" />
+          Síntesis Reflexiva
+        </button>
+        <button
+          onClick={() => setActiveTab('conclusion')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'conclusion'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <BookOpenCheck className="w-4 h-4" />
+          Conclusión
+        </button>
+        <button
+          onClick={() => setActiveTab('infografia')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'infografia'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <Image className="w-4 h-4" />
+          Infografía
+        </button>
+      </div>
+
+      <AnimatePresence mode="wait">
+        {activeTab === 'preguntas' && (
+          <motion.div
+            key="preguntas-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="space-y-6"
+          >
+            <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+              {amicarRpaContent.units.map((unit) => (
+                <button
+                  key={unit.number}
+                  onClick={() => setActiveUnit(unit.number)}
+                  className={`w-11 h-11 rounded-xl text-xs font-extrabold transition-all duration-200 cursor-pointer transform hover:scale-105 active:scale-95 shadow-sm flex items-center justify-center ${
+                    activeUnit === unit.number
+                      ? 'bg-gradient-to-br from-violet-500 to-indigo-500 text-white scale-110 shadow-glow'
+                      : 'bg-white text-primary-600 hover:bg-primary-50 border border-primary-200'
+                  }`}
+                  aria-label={`Ver Unidad ${unit.number}`}
+                >
+                  U{unit.number}
+                </button>
+              ))}
+            </div>
+
+            {amicarRpaContent.units.map((unit) => {
+              if (unit.number !== activeUnit) return null;
+              return (
+                <motion.div
+                  key={unit.number}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="space-y-6"
+                >
+                  <div className="bg-gradient-to-r from-primary-50 to-transparent p-6 rounded-3xl border-l-4 border-violet-500">
+                    <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-1">
+                      {unit.bloque}
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-primary-900 leading-snug">
+                      {unit.title}
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-6">
+                    {unit.qa.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4 hover:border-primary-300 transition-colors"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-violet-50 text-violet-600 font-extrabold text-sm flex-shrink-0">
+                            Q{item.globalNumber}
+                          </span>
+                          <h3 className="text-primary-850 font-bold leading-relaxed text-base sm:text-lg">
+                            {item.q}
+                          </h3>
+                        </div>
+                        <div className="pl-0 sm:pl-11 border-t border-primary-100 pt-4">
+                          <div className="flex items-start gap-2.5 text-accent mb-2">
+                            <MessageSquare className="w-4 h-4 mt-0.5" />
+                            <span className="text-xs font-extrabold uppercase tracking-wider text-primary-800">
+                              Respuesta y Reflexión Técnica
+                            </span>
+                          </div>
+                          <p className="text-primary-700 text-sm sm:text-base leading-relaxed">
+                            {item.a}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {activeTab === 'sintesis' && (
+          <motion.div
+            key="sintesis-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="space-y-6"
+          >
+            <div className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4">
+              <div className="flex items-center gap-2 text-accent">
+                <Target className="w-5 h-5" />
+                <h2 className="text-lg font-bold uppercase tracking-wider text-primary-800">
+                  El proceso de formulación y construcción metódica
+                </h2>
+              </div>
+              <p className="text-primary-700 text-sm sm:text-base leading-relaxed">
+                {amicarRpaContent.sintesis.formulacion}
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-primary-600 pl-2">
+                <Brain className="w-5 h-5" />
+                <h2 className="text-lg font-bold uppercase tracking-wider text-primary-850 font-display">
+                  Hábitos del Pensador Sistémico Experimentados
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {amicarRpaContent.sintesis.habits.map((habit, idx) => {
+                  const icons = [TrendingUp, Sparkles, Target, Award];
+                  const Icon = icons[idx] || Sparkles;
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-white border border-primary-200 rounded-3xl p-6 shadow-card hover:border-primary-300 transition-all duration-300 flex flex-col justify-between"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2.5 text-accent">
+                          <div className="w-9 h-9 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-4.5 h-4.5" />
+                          </div>
+                          <h3 className="text-primary-850 font-bold text-sm tracking-tight leading-snug">
+                            {habit.title}
+                          </h3>
+                        </div>
+                        <p className="text-primary-650 text-xs sm:text-sm leading-relaxed">
+                          {habit.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {activeTab === 'conclusion' && (
+          <motion.div
+            key="conclusion-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4"
+          >
+            <div className="flex items-center gap-2.5 text-violet-600 mb-2">
+              <Award className="w-6 h-6 animate-bounce" />
+              <h2 className="text-lg font-bold uppercase tracking-wider text-primary-800">
+                Conclusión y competencias adquiridas
+              </h2>
+            </div>
+            <blockquote className="bg-primary-50/50 border-l-4 border-violet-500 p-6 rounded-r-2xl">
+              <p className="text-primary-750 text-sm sm:text-base leading-relaxed italic font-medium">
+                "{amicarRpaContent.conclusion}"
+              </p>
+            </blockquote>
+          </motion.div>
+        )}
+
+        {activeTab === 'infografia' && (
+          <motion.div
+            key="infografia-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="bg-white border border-primary-200 rounded-3xl p-4 sm:p-6 shadow-card flex flex-col items-center"
+          >
+            <div className="flex items-center gap-2.5 text-accent mb-4 w-full justify-start pl-2">
+              <Image className="w-5 h-5 animate-pulse" />
+              <h2 className="text-lg font-bold uppercase tracking-wider text-primary-800">
+                Infografía de la Ruta Personal de Aprendizaje
+              </h2>
+            </div>
+
+            <div className="w-full rounded-2xl overflow-hidden border border-primary-100 shadow-sm max-w-4xl bg-primary-50/20">
+              <img
+                src="/rpa-infografia-amicar.png"
+                alt="Infografía RPA de Amicar Aguirre"
+                className="w-full h-auto object-contain max-h-[85vh] mx-auto rounded-xl shadow-inner"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Rpa() {
   const { id } = useParams();
@@ -1639,6 +2029,8 @@ export default function Rpa() {
           <RpaDenise member={member} />
         ) : member.id === 4 ? (
           <RpaMartinez member={member} />
+        ) : member.id === 5 ? (
+          <RpaAmicar member={member} />
         ) : (
           <div className="grid grid-cols-1 gap-8">
             

@@ -57,7 +57,7 @@ export default function RpaList() {
                     {member.name}
                   </h2>
                   
-                  {[1, 2, 3, 4].includes(member.id) && (
+                  {[1, 2, 3, 4, 5].includes(member.id) && (
                     <>
                       {/* Vista previa especial de la infografía */}
                       <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-primary-100 bg-primary-50/50 my-4 group-hover:border-primary-300 transition-all duration-300">
@@ -69,7 +69,9 @@ export default function RpaList() {
                               ? "/rpa-infografia-zaira.png"
                               : member.id === 3
                               ? "/rpa-infografia-denise.png"
-                              : "/rpa-infografia-martinez.jpg"
+                              : member.id === 4
+                              ? "/rpa-infografia-martinez.jpg"
+                              : "/rpa-infografia-amilcar.png"
                           }
                           alt={`Previsualización RPA de ${member.name}`}
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
@@ -83,7 +85,9 @@ export default function RpaList() {
                           ? "Desarrollar expertise en diseño de experiencias de usuario y modelado de procesos, integrando la visión humana con la tecnología."
                           : member.id === 3
                           ? "Mejorar capacidades de gestión del conocimiento organizacional y producción de documentación técnica de alto nivel como evidencia del trabajo del equipo."
-                          : "Consolidar una visión integral del rol del Ingeniero en Sistemas, vinculando la ingeniería con la dimensión humana, ética y gerencial."}
+                          : member.id === 4
+                          ? "Consolidar una visión integral del rol del Ingeniero en Sistemas, vinculando la ingeniería con la dimensión humana, ética y gerencial."
+                          : "Integrar el pensamiento sistémico con la gestión organizacional, aplicando homeostasis, vigilancia tecnológica y responsabilidad social al rol del ingeniero en sistemas."}
                       </p>
                     </>
                   )}
@@ -95,7 +99,7 @@ export default function RpaList() {
                     to={`/rpa/${member.id}`}
                     className="w-full justify-center inline-flex items-center gap-2 px-5 py-3.5 bg-citrus hover:bg-citrus-dark text-primary-950 font-bold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 text-center cursor-pointer border border-citrus-dark/20 text-sm sm:text-base animate-in"
                   >
-                    <span>{[1, 2, 3, 4].includes(member.id) ? 'Ver RPA' : 'Ver documento'}</span>
+                    <span>{[1, 2, 3, 4, 5].includes(member.id) ? 'Ver RPA' : 'Ver documento'}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
                   </Link>
                 </div>
