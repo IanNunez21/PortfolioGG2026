@@ -161,31 +161,125 @@ export const rpaData = [
   },
   {
     id: 4,
-    memberName: "Martinez Agostina Denise",
-    initials: "MA",
-    color: "from-violet-500 to-purple-500",
-    borderColor: "border-violet-500/30",
+    memberName: "Martinez Denise",
+    initials: "DM",
+    color: "from-accent to-warm",
+    borderColor: "border-accent/30",
     personalGoal:
-      "Incorporar herramientas de análisis de datos e inteligencia de negocios para transformar datos crudos en información estratégica que apoye la toma de decisiones gerenciales.",
+      "Consolidar una visión integral del rol del Ingeniero en Sistemas, comprendiendo que mi desempeño trasciende el desarrollo de soluciones técnicas. Busqué entender la dinámica de las organizaciones, gestionar procesos de cambio y diseñar soluciones alineadas con objetivos estratégicos, vinculando la ingeniería con la dimensión humana, ética y gerencial.",
     initialSkills: [
-      "Excel intermedio",
-      "Análisis estadístico básico",
-      "Investigación bibliográfica",
+      "Desarrollo de software técnico",
+      "Análisis de requerimientos funcionales",
+      "Pensamiento individual y especializado",
+      "Implementación de sistemas aislados",
     ],
     developedSkills: [
-      "Power BI y visualización de datos",
-      "Diseño de KPIs y dashboards",
-      "Investigación aplicada a organizaciones",
-      "Análisis de madurez digital",
-      "Balanced Scorecard",
+      "Articulación estratégica y sistémica",
+      "Liderazgo transformacional y control preventivo",
+      "Pensamiento de triple impacto (técnico, financiero y ESG)",
+      "Agilidad ante entornos disruptivos (BANI / VICA)",
+      "Síntesis crítica y visión humanista del software",
     ],
     reflection:
-      "Comprendí la diferencia entre dato e información, y cómo el diseño de los indicadores correctos puede cambiar completamente la toma de decisiones de una organización. El desafío D6 fue el más desafiante y el que más me hizo crecer profesionalmente.",
+      "Esta RPA me exigió superar la simple reproducción de conceptos y construir catorce preguntas que vinculan la ingeniería con la gestión organizacional real. Comprendí que diseñar software sin entender la cultura, la estrategia y las personas de una organización es construir sobre arena. El ingeniero también es un articulador de valor humano.",
     progress: [
-      { area: "Análisis de Datos", value: 80 },
-      { area: "Power BI", value: 75 },
-      { area: "Investigación", value: 90 },
-      { area: "KPIs / BI", value: 78 },
+      { area: "Gestión Estratégica", value: 88 },
+      { area: "Conducta Humana y Talento", value: 82 },
+      { area: "Transformación Digital", value: 90 },
+      { area: "Responsabilidad Social", value: 85 },
+    ],
+    units: [
+      {
+        number: 1,
+        title: "Fundamentos de la Administración y Gestión Gerencial",
+        acquiredConcepts: [
+          "Sistema abierto",
+          "Roles decisorios bajo presión",
+          "Control preventivo en tiempo real",
+          "Habilidades conceptuales del líder TI",
+          "Liderazgo participativo basado en datos",
+        ],
+        reflection:
+          "Ante una crisis de infraestructura, comprendí que el rol técnico es insuficiente. El ingeniero debe desplegar habilidades conceptuales para mapear cómo el apagón del software afecta proveedores, logística y clientes, tomando decisiones rápidas bajo alta presión emocional.",
+      },
+      {
+        number: 2,
+        title: "Estrategia Empresarial y Planificación",
+        acquiredConcepts: [
+          "Niveles estratégico, táctico y operativo",
+          "DSS / Business Intelligence",
+          "Capas de abstracción en software",
+          "Cultura organizacional como variable técnica",
+          "Gestión de stakeholders internos",
+        ],
+        reflection:
+          "Aprendí que un DSS fracasa cuando el diseñador no comprende los niveles de la estrategia. La Alta Gerencia necesita síntesis y proyecciones, no datos operativos en crudo. Y que la viabilidad de un sistema está arraigada en la cultura de la organización, no solo en el código.",
+      },
+      {
+        number: 3,
+        title: "Conducta Humana y Gestión del Talento 4.0",
+        acquiredConcepts: [
+          "Síndrome del impostor",
+          "Roles mentales de Belbin",
+          "Sinergia negativa en equipos técnicos",
+          "Organización inteligente (Teoría Y)",
+          "Capacitación continua como activo estratégico",
+        ],
+        reflection:
+          "Descubrí que armar equipos solo por excelencia técnica genera sinergia negativa. Si todos son 'Cerebros', el equipo colapsa en parálisis por análisis. La complementariedad humana es una variable técnica indispensable para el éxito de cualquier proyecto informático.",
+      },
+      {
+        number: 4,
+        title: "Modelado de Negocios y Captación de Valor (SaaS)",
+        acquiredConcepts: [
+          "Modelo CANVAS",
+          "Flujos de ingresos recurrentes (SaaS)",
+          "Arquitectura Multi-tenant vs. Single-tenant",
+          "Punto de equilibrio financiero",
+          "Alta disponibilidad y tolerancia a fallos",
+        ],
+        reflection:
+          "La estructura de ingresos de un modelo SaaS determina directamente el diseño de infraestructura. Cada minuto de caída erosiona la confianza del cliente y activa penalizaciones contractuales. La arquitectura Multi-tenant permite predecir costos y alcanzar el punto de equilibrio con mayor rapidez.",
+      },
+      {
+        number: 5,
+        title: "Gestión del Cambio y Transformación Digital",
+        acquiredConcepts: [
+          "Reingeniería de Procesos (BPR)",
+          "Mejora continua incremental",
+          "Modelo de las 7-S de McKinsey",
+          "Valores compartidos como eje conductor",
+          "Transformación digital sin fractura cultural",
+        ],
+        reflection:
+          "Confundir BPR con mejora continua es usar tecnología para acelerar la ineficiencia. La reingeniería exige romper silos y rediseñar desde cero. Y cualquier sistema que choque con los valores compartidos de la cultura organizacional será boicoteado, sin importar su calidad técnica.",
+      },
+      {
+        number: 6,
+        title: "Ecosistemas de Innovación y Startups",
+        acquiredConcepts: [
+          "MVP y validación de hipótesis",
+          "Deuda técnica gestionada",
+          "Refactorización planificada",
+          "Vigilancia tecnológica",
+          "Inteligencia competitiva y arquitectura adaptativa",
+        ],
+        reflection:
+          "Un MVP asume deuda técnica conscientemente; el problema es no pagarla. Si la startup tracciona y la arquitectura precaria persiste, el sistema colapsa. La vigilancia tecnológica integrada en decisiones gerenciales permite diseñar plataformas desacopladas que absorben cambios regulatorios sin detener la operación.",
+      },
+      {
+        number: 7,
+        title: "Responsabilidad Social Empresaria (RSE) y Universitaria (RSU)",
+        acquiredConcepts: [
+          "RSE integrada en el código",
+          "Ética algorítmica y sesgos",
+          "Privacidad desde el diseño",
+          "RSU con ciclo de vida completo",
+          "Sustentabilidad tecnológica en comunidades",
+        ],
+        reflection:
+          "La RSE legítima debe estar en el núcleo del software: auditar algoritmos para erradicar sesgos discriminatorios y garantizar privacidad desde el diseño. Los proyectos de RSU no pueden ser actos de asistencia aislados; requieren transferencia tecnológica real y un plan de sustentabilidad para no generar dependencia.",
+      },
     ],
   },
   {

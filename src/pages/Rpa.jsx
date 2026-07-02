@@ -1195,6 +1195,392 @@ function RpaIan({ member }) {
   );
 }
 
+// Contenido completo del RPA de Denise Martínez
+const martinezRpaContent = {
+  units: [
+    {
+      number: 1,
+      bloque: "Bloque I: Las Organizaciones, la Administración y la Gestión Gerencial",
+      title: "UNIDAD I: Las Organizaciones y su Administración",
+      qa: [
+        {
+          q: "¿Cómo interactúan las habilidades conceptuales y los roles decisorios de la gerencia de TI cuando se debe gestionar una crisis de infraestructura de software bajo un entorno altamente inestable y volátil (VICA / BANI)?",
+          a: "Ante una caída masiva de los sistemas de una organización, el rol puramente técnico es insuficiente. El líder informático debe desplegar sus habilidades conceptuales para mapear mentalmente cómo el apagón del software afecta a los proveedores, la logística y la atención al cliente. Simultáneamente, al asumir sus roles decisorios, el ingeniero debe tomar decisiones rápidas bajo alta presión emocional, priorizando levantar los módulos de software que soportan las actividades críticas de la cadena de valor, mitigando el impacto económico directo y protegiendo los canales clave del negocio."
+        },
+        {
+          q: "En relación con las etapas dinámicas del proceso administrativo (Dirección y Control), ¿cómo se transforma el rol del líder de TI al migrar de auditorías operativas tradicionales ex-post a sistemas de monitoreo y tableros analíticos en tiempo real?",
+          a: "El proceso administrativo clásico ejecutaba el control posterior al hecho, lo que generaba grandes desfases y pérdidas de rentabilidad. Con el soporte de la ingeniería de sistemas, el control se vuelve continuo y preventivo. El rol del líder informático se transforma en el de un facilitador estratégico que traduce métricas de bajo nivel en indicadores clave de rendimiento. Al diseñar plataformas analíticas integradas, se capacita a los gerentes de primera línea para corregir desviaciones operativas de inmediato. Esto modifica la función de dirección, transitando de la supervisión rígida hacia un liderazgo participativo y consultivo fundamentado en la disponibilidad democrática de datos confiables."
+        }
+      ]
+    },
+    {
+      number: 2,
+      bloque: "Bloque I: Las Organizaciones, la Administración y la Gestión Gerencial",
+      title: "UNIDAD II: Estrategia Empresarial",
+      qa: [
+        {
+          q: "¿Cómo impacta el desalineamiento conceptual entre los niveles de la gestión estratégica (Estratégico, Táctico y Operativo) en la tasa de desuso y abandono de los sistemas de soporte a la decisión (DSS) por parte de la Alta Gerencia?",
+          a: "Los sistemas de soporte a la decisión (DSS) o herramientas de Business Intelligence fracasan sistemáticamente si el diseñador técnico no comprende los niveles de la estrategia. La Alta Gerencia opera en el nivel estratégico, lidiando con decisiones no estructuradas, visiones a largo plazo y variables cualitativas del macroentorno. Si el software desarrollado presenta reportes excesivamente detallados y cargados de datos puramente operativos o tácticos (propios de las jefaturas intermedias), la dirección ignorará la herramienta debido a la sobrecarga de información irrelevante para su rol. El Ingeniero en Sistemas debe estructurar capas de abstracción en el software, garantizando que el sistema sintetice los datos operativos y los transforme en proyecciones estratégicas claras y simulaciones de escenarios futuros que aporten valor real a la dirección de la empresa."
+        },
+        {
+          q: "Al evaluar las etapas de las decisiones estratégicas (análisis, decisión e implementación), ¿por qué la omisión de un análisis de la cultura organizacional interna y de los grupos de interés (stakeholders) inhabilita la viabilidad técnica de una nueva plataforma de software integrada?",
+          a: "La viabilidad de un sistema de información no depende únicamente de la compatibilidad del hardware o de la eficiencia del código algorítmico; está profundamente arraigada en el sistema cultural de la organización. Durante la etapa de análisis estratégico, omitir los intereses, temores y dinámicas informales de los stakeholders internos genera que la fase de implementación de software colapse debido a resistencias invisibles. La cultura corporativa puede asimilar la nueva tecnología como un mecanismo de control punitivo en lugar de una herramienta de optimización. El ingeniero debe actuar como un gestor estratégico, diagnosticando estas variables humanas anticipada para codificar soluciones que armonicen con las pautas culturales de la firma, garantizando la adopción real de la solución implementada."
+        }
+      ]
+    },
+    {
+      number: 3,
+      bloque: "Bloque II: Factor Humano, Modelado de Negocios e Infraestructura",
+      title: "UNIDAD III: La Conducta Humana y el Talento 4.0",
+      qa: [
+        {
+          q: "¿Cómo altera el fenómeno del \"síndrome del impostor\" o la desmotivación por obsolescencia tecnológica la productividad técnica de un equipo de desarrollo de sistemas y qué estrategias gerenciales asertivas deben aplicarse?",
+          a: "La velocidad disruptiva del entorno digital (BANI) expone a los ingenieros de software a una constante presión por actualizar sus competencias. Cuando un colaborador internaliza que sus conocimientos técnicos están quedando obsoletos frente a tecnologías emergentes como la Inteligencia Artificial, experimenta una caída severa en su motivación intrínseca y seguridad laboral. En lugar de aplicar medidas de control tradicionales de rendimiento ex-post, la gerencia de TI debe implementar una cultura de organización inteligente basada en la Teoría Y. Esto implica institucionalizar programas de capacitación continua pagados por la empresa, mentorías cruzadas y espacios de experimentación donde el error sea gestionado como un activo de aprendizaje colectivo, mitigando el estrés psicológico del equipo humano y blindando el capital intelectual de la organización."
+        },
+        {
+          q: "Si analizamos las dinámicas organizacionales complejas, ¿cómo se evidencia la manifestación de la sinergia negativa en células de desarrollo de software compuestas exclusivamente por perfiles conductuales orientados al pensamiento crítico e individualizado (Roles Mentales de Belbin)?",
+          a: "La sinergia negativa ocurre cuando el resultado de la interacción de los elementos del sistema es menor que la suma de sus capacidades individuales. En ingeniería de software, es común armar equipos basándose únicamente en la excelencia del currículum técnico. Si una célula ágil se satura exclusivamente con roles mentales de Belbin (como el \"Cerebro\" o el \"Especialista\"), el equipo tenderá al conflicto crónico y a la parálisis por análisis, debido a que cada miembro buscará imponer su solución técnica ideal aislada. La ausencia de roles sociales (como el \"Cohesionador\") o de acción (como el \"Implementador\") priva al grupo de la capacidad de operativizar el código y coordinar la comunicación asertiva, demostrando que la complementariedad humana es una variable técnica indispensable para el éxito del proyecto informático."
+        }
+      ]
+    },
+    {
+      number: 4,
+      bloque: "Bloque II: Factor Humano, Modelado de Negocios e Infraestructura",
+      title: "UNIDAD IV: Modelos de Negocios",
+      qa: [
+        {
+          q: "¿De qué manera la conceptualización de los \"Flujos de Ingresos\" en un modelo de negocio SaaS (Software as a Service) condiciona las políticas de escalabilidad y los requerimientos no funcionales de tolerancia a fallos del sistema informático de soporte?",
+          a: "En los modelos de negocio tradicionales, los ingresos ocurren en transacciones puntuales aisladas. En un modelo SaaS, la captación de valor se basa en flujos de ingresos recurrentes (suscripciones mensuales o anuales) vinculados directamente a la disponibilidad continua del servicio. Esta lógica comercial impone al Ingeniero en Sistemas requerimientos no funcionales de alta criticidad: el sistema informático no puede permitirse caídas imprevistas, ya que cada minuto de desconexión erosiona de inmediato la confianza del cliente y activa penalizaciones económicas de los contratos de nivel de servicio. La arquitectura de software debe diseñarse bajo esquemas de alta disponibilidad, balanceo de carga y redundancia geográfica elástica, demostrando cómo la estructura de ingresos comerciales determina directamente el diseño de infraestructura de servidores."
+        },
+        {
+          q: "Al definir el bloque de Estructura de Costos en la metodología CANVAS para un software en la nube, ¿cómo influuye la decisión técnica entre una arquitectura de base de datos multi-inquilino (Multi-tenant) o una de inquilino único (Single-tenant) en la predictibilidad del punto de equilibrio financiero?",
+          a: "La Estructura de Costos está ligada al aprovisionamiento de recursos. Si el ingeniero opta por una infraestructura Single-tenant (una base de datos y servidor aislado por cada cliente), el costo variable aumenta linealmente con cada nuevo usuario, elevando los costos fijos iniciales de mantenimiento. En contraste, una arquitectura Multi-tenant (múltiples clientes compartiendo la misma base de datos segregada lógicamente) reduce drásticamente el costo variable marginal por usuario. Esto optimiza el aprovechamiento de los Recursos Clave tecnológicos, permitiendo predecir con mayor estabilidad el volumen mínimo de usuarios requeridos para cubrir los gastos de operación fijos y alcanzar con rapidez el punto de equilibrio financiero."
+        }
+      ]
+    },
+    {
+      number: 5,
+      bloque: "Bloque III: Gestión de la Innovación, Procesos y Sostenibilidad",
+      title: "UNIDAD V: Dinámica del Cambio y Reingeniería",
+      qa: [
+        {
+          q: "¿Por qué un proceso de Reingeniería de Procesos de Negocio (BPR) que busque una transformación radical de los flujos informacionales colapsa operativamente si la gerencia confunde esta herramienta disruptiva con planes tradicionales de mejora continua incremental?",
+          a: "La reingeniería (BPR) propuesta por Hammer y Champy exige abandonar por completo los paradigmas administrativos vigentes para rediseñar los procesos desde cero, buscando mejoras espectaculares en variables críticas como costos y velocidad. Confundir esto con la mejora continua (que realiza optimizaciones marginales sobre la estructura funcional existente) es un grave error metodológico. Si el Ingeniero en Sistemas aplica un enfoque de mejora incremental sobre un proceso burocrático viciado, terminará usando la tecnología únicamente para acelerar la ineficiencia. La reingeniería demanda romper los silos departamentales y unificar tareas mediante software integrado; si la gerencia no comprende el riesgo y la radicalidad de este enfoque, mantendrá las estructuras rígidas preexistentes, frustrando la transformación digital y destruyendo la inversión de capital."
+        },
+        {
+          q: "Al implementar una plataforma tecnológica transversal bajo las directrices del Modelo de las 7-S de McKinsey, ¿cómo actúa la variable de los \"Valores Compartidos\" como el eje conductor que impide que la reconfiguración de la Estructura y los Sistemas fracture la cohesión interna de la empresa?",
+          a: "El modelo de las 7-S demuestra que una organización opera como una red interconectada donde los cambios en los factores duros (Sistemas, Estructura, Estrategia) impactan inmediatamente en los factores blandos. Al introducir un sistema informático integrado que centraliza la información y automatiza las auditorías internas, se altera la forma de trabajar del Personal. Si esta transformación tecnológica choca frontalmente con los Valores Compartidos de la cultura organizacional (por ejemplo, si la cultura corporativa valora la autonomía informal y la confianza ciega sobre el control algorítmico), los colaboradores percibirán la herramienta como una amenaza ética o laboral. El Ingeniero en Sistemas debe asegurar que el software sea diseñado y comunicado de manera tal que potencie y visibilice los valores humanos compartidos de la empresa, evitando el boicot del sistema socio-técnico."
+        }
+      ]
+    },
+    {
+      number: 6,
+      bloque: "Bloque III: Gestión de la Innovación, Procesos y Sostenibilidad",
+      title: "UNIDAD VI: Ecosistemas de Innovación y Startups",
+      qa: [
+        {
+          q: "En las fases iniciales de una Empresa de Base Tecnológica (EBT), ¿cómo debe el Ingeniero en Sistemas gestionar técnicamente el concepto de \"deuda técnica\" al desarrollar un Producto Mínimo Viable (MVP) sin comprometer la futura viabilidad del escalamiento de la plataforma de software?",
+          a: "Un MVP tiene como único propósito validar hipótesis críticas del modelo de negocio en el mercado real con el menor esfuerzo y tiempo posible, evitando el \"valle de la muerte\" comercial. Para lograr esta velocidad, el ingeniero asume conscientemente \"deuda técnica\" (escribir código rápido, omitir arquitecturas robustas o automatizaciones complejas). Desde una perspectiva sistémica, esta deuda es un pasivo que debe gestionarse con inteligencia gerencial: si la validación comercial es SQL exitosa y la startup comienza a traccionar usuarios, mantener la arquitectura precaria del MVP provocará el colapso sistémico del software. El ingeniero debe planificar ciclos formales de refactorización tecnológica paralela al crecimiento del negocio para saldar la deuda técnica antes de que bloquee la escalabilidad operativa de la empresa."
+        },
+        {
+          q: "¿De qué manera el proceso sistemático de \"Vigilancia Tecnológica\" e \"Inteligencia Competitiva\" condiciona la planificación de la arquitectura empresarial de software para anticiparse a los cambios regulatorios o disrupciones del microentorno sectorial?",
+          a: "Las organizaciones digitales del siglo XXI ya no pueden planificar bajo modelos rígidos quinquenales; requieren una arquitectura empresarial adaptativa. La Vigilancia Tecnológica actúa como el sensor informacional del sistema abierto, captando sistemática novedades científicas, patentes y movimientos de la competencia. Si el Ingeniero en Sistemas integra estos flujos de inteligencia competitiva en las mesas de decisión gerencial, puede diseñar la plataforma informática de la empresa utilizando principios de desacoplamiento tecnológico (como contenedores y APIs abiertas). Esta flexibilidad arquitectónica permite que, si el entorno introduce una variable regulatoria disruptiva (como una nueva ley de protección de datos), el sistema pueda actualizar un módulo específico inmediata sin necesidad de detener o alterar la operación global del negocio."
+        }
+      ]
+    },
+    {
+      number: 7,
+      bloque: "Bloque III: Gestión de la Innovación, Procesos y Sostenibilidad",
+      title: "UNIDAD VII: Responsabilidad Social Empresaria (RSE) y Universitaria (RSU)",
+      qa: [
+        {
+          q: "¿Cómo debe un Ingeniero en Sistemas operativizar los principios de la Responsabilidad Social Empresaria (RSE) genuina al definir los requerimientos de gobernanza de datos y diseño algorítmico en sistemas de Inteligencia Artificial que impactan sobre los clientes externos de la firma?",
+          a: "La RSE legítima trasciende las acciones cosméticas de relaciones públicas; debe estar integrada en el núcleo informacional y operativo del negocio. Al desarrollar software de automatización o algoritmos predictivos (por ejemplo, sistemas de scoring crediticio o selección de personal), el ingeniero tiene la responsabilidad ética de auditar el código para erradicar sesgos algorítmicos discriminatorios que penalicen injusta a sectores vulnerables de la sociedad. Asimismo, la gobernanza de datos debe garantizar la privacidad desde el diseño, otorgando a los usuarios transparencia absoluta sobre el uso de sus datos. Diseñar tecnología con conciencia social es una manifestación concreta de la responsabilidad del ingeniero ante los stakeholders externos, promoviendo una transformación digital ética y equitativa."
+        },
+        {
+          q: "En el marco de la Responsabilidad Social Universitaria (RSU) y el Compromiso Universitario Social (CUS), ¿por qué los proyectos de desarrollo tecnológico de software de código abierto orientados a sectores vulnerables o cooperativas regionales deben evaluarse bajo una rigurosa matriz de factibilidad técnica y sustentabilidad financiera a largo plazo?",
+          a: "Los proyectos informáticos desarrollados bajo la premisa de la RSU no pueden considerarse meras simulaciones académicas de laboratorio o actos de asistencia aislados. Entregar una solución de software de código abierto a una cooperativa regional sin asegurar una transferencia tecnológica efectiva, documentación exhaustiva y un plan de sustentabilidad para el mantenimiento técnico futuro genera una dependencia peligrosa y un perjuicio para la comunidad cuando los estudiantes finalizan la cátedra. El Ingeniero en Sistemas en formación debe aplicar una visión de ciclo de vida completo del sistema, modelando estructuras de soporte comunitario eficientes y capacitando al personal local para garantizar que la solución tecnológica implementada sea sustentable en el tiempo, reduzca de verdad la brecha digital y cumpla medible con los Objetivos de Desarrollo Sostenible."
+        }
+      ]
+    }
+  ],
+  sintesis: {
+    formulacion: "La elaboración de esta Ruta de Aprendizaje (RPA) constituyó un proceso de integración de los contenidos desarrollados durante la asignatura. La construcción de catorce preguntas y su vinculación con las siete unidades temáticas exigió una lectura analítica y reflexiva, superando la simple reproducción de los conceptos estudiados. El trabajo implicó revisar y reorganizar los contenidos para elaborar respuestas fundamentadas, fortaleciendo la capacidad de análisis y la comprensión de las relaciones entre los distintos enfoques de la gestión organizacional.",
+    habits: [
+      {
+        title: "Observar el panorama general",
+        desc: "Este hábito se desarrolló durante el diagnóstico organizacional de la Unidad 1, donde se analizó la organización como un sistema abierto en interacción con su entorno. Se comprendió que las decisiones vinculadas al desarrollo de software impactan en distintos procesos y áreas de la organización, y no únicamente en el ámbito tecnológico."
+      },
+      {
+        title: "Identificar la estructura circular de causa-efecto en los sistemas",
+        desc: "Al analizar casos de baja productividad en empresas de software, se reemplazó la búsqueda de una causa única por el estudio de ciclos de retroalimentación. Se observó cómo la presión sobre los equipos incrementaba el estrés, generaba más errores, aumentaba el retrabajo y reducía la productividad."
+      },
+      {
+        title: "Cambiar de perspectiva para encontrar nuevos caminos",
+        desc: "Este hábito se aplicó durante el desarrollo del modelo CANVAS y de propuestas de valor. La actividad permitió adoptar la perspectiva del cliente, priorizando la solución de necesidades reales por encima de la complejidad tecnológica de las soluciones."
+      },
+      {
+        title: "Prestar atención a los retardos de tiempo al evaluar relaciones causa-efecto",
+        desc: "La simulación de la implementación del Cuadro de Mando Integral y la matriz CAME permitió comprender que las decisiones estratégicas requieren tiempo para generar resultados. La capacitación, la incorporación de nuevas metodologías y la mejora en la percepción de los clientes producen efectos de manera gradual."
+      }
+    ]
+  },
+  conclusion: "Como resultado, se consolidó una visión más amplia del rol del ingeniero en sistemas, entendiendo que su desempeño trasciende el desarrollo de soluciones tecnológicas. Además de los conocimientos técnicos, resulta fundamental comprender la dinámica de las organizaciones, liderar equipos, gestionar procesos de cambio y diseñar soluciones alineadas con objetivos estratégicos y las necesidades del entorno."
+};
+
+function RpaMartinez({ member }) {
+  const [activeTab, setActiveTab] = useState('preguntas'); // 'preguntas' | 'sintesis' | 'conclusion' | 'infografia'
+  const [activeUnit, setActiveUnit] = useState(1);
+
+  return (
+    <div className="space-y-8">
+      {/* Botones de Pestañas Principales */}
+      <div className="flex flex-wrap gap-2.5 border-b border-primary-200 pb-3">
+        <button
+          onClick={() => setActiveTab('preguntas')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'preguntas'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <BookOpen className="w-4 h-4" />
+          Preguntas por Unidad
+        </button>
+        <button
+          onClick={() => setActiveTab('sintesis')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'sintesis'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <Brain className="w-4 h-4" />
+          Síntesis Reflexiva
+        </button>
+        <button
+          onClick={() => setActiveTab('conclusion')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'conclusion'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <BookOpenCheck className="w-4 h-4" />
+          Conclusión
+        </button>
+        <button
+          onClick={() => setActiveTab('infografia')}
+          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer ${
+            activeTab === 'infografia'
+              ? 'bg-gradient-to-r from-primary-800 to-primary-950 text-white shadow-md'
+              : 'bg-white hover:bg-primary-50 text-primary-650 border border-primary-200'
+          }`}
+        >
+          <Image className="w-4 h-4" />
+          Infografía
+        </button>
+      </div>
+
+      {/* Renderizado de Pestañas */}
+      <AnimatePresence mode="wait">
+        {activeTab === 'preguntas' && (
+          <motion.div
+            key="preguntas-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="space-y-6"
+          >
+            {/* Sub-tabs de Selección de Unidad */}
+            <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+              {martinezRpaContent.units.map((unit) => (
+                <button
+                  key={unit.number}
+                  onClick={() => setActiveUnit(unit.number)}
+                  className={`w-11 h-11 rounded-xl text-xs font-extrabold transition-all duration-200 cursor-pointer transform hover:scale-105 active:scale-95 shadow-sm flex items-center justify-center ${
+                    activeUnit === unit.number
+                      ? 'bg-gradient-to-br from-accent to-warm text-white scale-110 shadow-glow'
+                      : 'bg-white text-primary-600 hover:bg-primary-50 border border-primary-200'
+                  }`}
+                  aria-label={`Ver Unidad ${unit.number}`}
+                >
+                  U{unit.number}
+                </button>
+              ))}
+            </div>
+
+            {/* Contenido de la Unidad Activa */}
+            {martinezRpaContent.units.map((unit) => {
+              if (unit.number !== activeUnit) return null;
+              return (
+                <motion.div
+                  key={unit.number}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="space-y-6"
+                >
+                  {/* Título de Unidad y Bloque */}
+                  <div className="bg-gradient-to-r from-primary-50 to-transparent p-6 rounded-3xl border-l-4 border-accent">
+                    <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-1">
+                      {unit.bloque}
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-primary-900 leading-snug">
+                      {unit.title}
+                    </h2>
+                  </div>
+
+                  {/* Preguntas e hilos de respuesta */}
+                  <div className="grid grid-cols-1 gap-6">
+                    {unit.qa.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4 hover:border-primary-300 transition-colors"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-blush-50 text-accent font-extrabold text-sm flex-shrink-0">
+                            Q{idx + 1 + (unit.number - 1) * 2}
+                          </span>
+                          <h3 className="text-primary-850 font-bold leading-relaxed text-base sm:text-lg">
+                            {item.q}
+                          </h3>
+                        </div>
+                        <div className="pl-0 sm:pl-11 border-t border-primary-100 pt-4">
+                          <div className="flex items-start gap-2.5 text-accent mb-2">
+                            <MessageSquare className="w-4 h-4 mt-0.5" />
+                            <span className="text-xs font-extrabold uppercase tracking-wider text-primary-800">
+                              Respuesta y Reflexión Técnica
+                            </span>
+                          </div>
+                          <p className="text-primary-700 text-sm sm:text-base leading-relaxed">
+                            {item.a}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {activeTab === 'sintesis' && (
+          <motion.div
+            key="sintesis-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="space-y-6"
+          >
+            {/* Formulación Metódica */}
+            <div className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4">
+              <div className="flex items-center gap-2 text-accent">
+                <Target className="w-5 h-5" />
+                <h2 className="text-lg font-bold uppercase tracking-wider text-primary-800">
+                  El proceso de formulación y construcción metódica
+                </h2>
+              </div>
+              <p className="text-primary-700 text-sm sm:text-base leading-relaxed">
+                {martinezRpaContent.sintesis.formulacion}
+              </p>
+            </div>
+
+            {/* Hábitos del Pensador Sistémico */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-primary-600 pl-2">
+                <Brain className="w-5 h-5" />
+                <h2 className="text-lg font-bold uppercase tracking-wider text-primary-850 font-display">
+                  Hábitos del Pensador Sistémico Experimentados
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {martinezRpaContent.sintesis.habits.map((habit, idx) => {
+                  const icons = [TrendingUp, Sparkles, Target, Award];
+                  const Icon = icons[idx] || Sparkles;
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-white border border-primary-200 rounded-3xl p-6 shadow-card hover:border-primary-300 transition-all duration-300 flex flex-col justify-between"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2.5 text-accent">
+                          <div className="w-9 h-9 rounded-xl bg-blush-50 text-accent flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-4.5 h-4.5" />
+                          </div>
+                          <h3 className="text-primary-850 font-bold text-sm tracking-tight leading-snug">
+                            {habit.title}
+                          </h3>
+                        </div>
+                        <p className="text-primary-650 text-xs sm:text-sm leading-relaxed">
+                          {habit.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {activeTab === 'conclusion' && (
+          <motion.div
+            key="conclusion-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="bg-white border border-primary-200 rounded-3xl p-6 sm:p-8 shadow-card space-y-4"
+          >
+            <div className="flex items-center gap-2.5 text-accent mb-2">
+              <Award className="w-6 h-6 animate-bounce" />
+              <h2 className="text-lg font-bold uppercase tracking-wider text-primary-800">
+                Conclusión y competencias adquiridas
+              </h2>
+            </div>
+            <blockquote className="bg-primary-50/50 border-l-4 border-accent p-6 rounded-r-2xl">
+              <p className="text-primary-750 text-sm sm:text-base leading-relaxed italic font-medium">
+                "{martinezRpaContent.conclusion}"
+              </p>
+            </blockquote>
+          </motion.div>
+        )}
+
+        {activeTab === 'infografia' && (
+          <motion.div
+            key="infografia-tab"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="bg-white border border-primary-200 rounded-3xl p-4 sm:p-6 shadow-card flex flex-col items-center"
+          >
+            <div className="flex items-center gap-2.5 text-accent mb-4 w-full justify-start pl-2">
+              <Image className="w-5 h-5 animate-pulse" />
+              <h2 className="text-lg font-bold uppercase tracking-wider text-primary-850">
+                Infografía de la Ruta Personal de Aprendizaje
+              </h2>
+            </div>
+            
+            <div className="w-full rounded-2xl overflow-hidden border border-primary-100 shadow-sm max-w-4xl bg-primary-50/20">
+              <img
+                src="/rpa-infografia-martinez.jpg"
+                alt="Infografía RPA de Denise Martínez"
+                className="w-full h-auto object-contain max-h-[85vh] mx-auto rounded-xl shadow-inner"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Rpa() {
   const { id } = useParams();
   const member = rpaData.find((m) => m.id === parseInt(id));
@@ -1251,6 +1637,8 @@ export default function Rpa() {
           <RpaZaira member={member} />
         ) : member.id === 3 ? (
           <RpaDenise member={member} />
+        ) : member.id === 4 ? (
+          <RpaMartinez member={member} />
         ) : (
           <div className="grid grid-cols-1 gap-8">
             
